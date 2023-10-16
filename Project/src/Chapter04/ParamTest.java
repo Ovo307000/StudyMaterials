@@ -1,2 +1,3 @@
-package Chapter04;public class ParamTest {
-}
+package Chapter04;
+
+public class ParamTest {}
