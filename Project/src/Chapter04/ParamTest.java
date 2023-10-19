@@ -1,64 +1,78 @@
 package Chapter04;
 
 public class ParamTest {
+	private String name;
+	private int    age;
 
-	StringBuilder name = new StringBuilder();
+	// 无参构造器
+	public ParamTest() {}
 
-	public ParamTest() {
-
+	// 全参构造器
+	public ParamTest(String name, int age) {
+		this.name = name;
+		this.age  = age;
 	}
 
 	public static void main(String[] args) {
-		ParamTest test = new ParamTest();
-		test.run();
-	}
+		ParamTest paramTest = new ParamTest();
 
-	// 该方法测试了ParamUtil类中的swap()和change()方法
-
-	// 测试结果表明：
-	// 1. 方法不能修改基本数据类型的参数
-	// 2. 方法可以改变对象参数的状态
-	public void run() {
-		// 测试1：方法不能修改基本数据类型的参数
-		ParamTest a = new ParamTest();
-		ParamTest b = new ParamTest();
-
-		a.setName(new StringBuilder("张三"));
-		b.setName(new StringBuilder("李四"));
-
-		System.out.println("Before swap:");
-		System.out.println("a.name = " + a.getName());
-		System.out.println("b.name = " + b.getName());
-
-		ParamUtil.swap(a, b);
-
-		System.out.println("After swap:");
-		System.out.println("a.name = " + a.getName());
-		System.out.println("b.name = " + b.getName());
+		System.out.println("测试1：交换两个对象");
+		paramTest.swapTest();
 
 		System.out.println();
-		System.out.println();
 
-		// 测试2：方法可以改变对象参数的状态
-		ParamTest c = new ParamTest();
-
-		c.setName(new StringBuilder("王五"));
-
-		System.out.println("Before change: ");
-		System.out.println("c.name = " + c.getName());
-
-		ParamUtil.change(c);
-
-		System.out.println("After change: ");
-		System.out.println("c.name = " + c.getName());
+		System.out.println("测试2：交换两个对象的 name 属性");
+		paramTest.nameChangeTest();
 	}
 
-	public StringBuilder getName() {
+	public void swapTest() {
+		ParamTest zhangSan = new ParamTest("张三", 20);
+		ParamTest liSi     = new ParamTest("李四", 22);
+
+		System.out.println("交换前：");
+		System.out.println("zhangSan = " + zhangSan.toString());
+		System.out.println("liSi     = " + liSi.toString());
+
+		ParamUtil.swap(zhangSan, liSi);
+
+		System.out.println("交换后：");
+		System.out.println("zhangSan = " + zhangSan.toString());
+		System.out.println("liSi     = " + liSi.toString());
+	}
+
+	private void nameChangeTest() {
+		ParamTest zhangSan = new ParamTest("张三", 20);
+		ParamTest liSi     = new ParamTest("李四", 22);
+
+		System.out.println("交换前：");
+		System.out.println("zhangSan = " + zhangSan.toString());
+		System.out.println("liSi     = " + liSi.toString());
+
+		ParamUtil.nameChange(zhangSan, liSi);
+
+		System.out.println("交换后：");
+		System.out.println("zhangSan = " + zhangSan.toString());
+		System.out.println("liSi     = " + liSi.toString());
+
+	}
+
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(StringBuilder n) {
-		this.name = n;
+	public void setName(String name) {
+		this.name = name;
 	}
 
+	public int getAge() {
+		return this.age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String toString() {
+		return String.format("%s [name = %s, age = %d]", getClass().getName(), name, age);
+	}
 }
