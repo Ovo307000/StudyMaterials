@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee {
-	private static int       nextId = 0;
-	private final  int       id;
+	private static  int       nextId = 0;
+	protected final int       id;
 	// 设置员工属性
-	private        LocalDate hireDay;
-	private        String    name;
-	private        int       salary;
-	private        int       age;
+	private         LocalDate hireDay;
+	private         String    name;
+	private         int       salary;
+	private         int       age;
 
 	public Employee() {
 		this.id = ++ nextId;
