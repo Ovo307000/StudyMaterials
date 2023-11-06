@@ -16,7 +16,6 @@ public abstract class Person
 	}
 
 	public abstract void doSomething();
-
 	public String getName()
 	{
 		return name;
@@ -30,6 +29,6 @@ public abstract class Person
 	@Override
 	public String toString()
 	{
-		return "person{" + "name='" + name + '\'' + ", age=" + age + '}';
+		return STR."person{name='\{name}\{'\''}, age=\{age}\{'}'}";
 	}
 }

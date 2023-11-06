@@ -27,13 +27,13 @@ public class Test
 		{
 			if (person instanceof Student student)
 			{
-				System.out.println(student.getName() + "is" + student.getLevel() + "level" + "age is" + student.getAge() + "years old. \n"
-				                   + "He is a " + student.getClass().getSimpleName());
+				System.out.println(
+						STR. "\{student.getName()} is \{student.getLevel()} level. \n He is a \{student.getClass().getSimpleName()}");
 			}
 			else if (person instanceof Teacher teacher)
 			{
-				System.out.println(teacher.getName() + "is" + teacher.getSalary() + "salary" + "age is" + teacher.getAge() + "years old. \n"
-				                   + "He is a " + teacher.getClass().getSimpleName());
+				System.out.println(
+						STR. "\{teacher.getName()} is \{teacher.getSalary()} salary. \n He is a \{teacher.getClass().getSimpleName()}");
 			}
 		}
 	}

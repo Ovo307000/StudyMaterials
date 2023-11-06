@@ -113,6 +113,6 @@ public class Employee
 	@Override
 	public String toString()
 	{
-		return getClass() + "[name=" + name + ", age=" + age + ", salary=" + salary + ", hireDay=" + hireDay + "id=" + id + "]";
+		return STR."\{getClass()}[name=\{name}, age=\{age}, salary=\{salary}, hireDay=\{hireDay}id=\{id}]";
 	}
 }

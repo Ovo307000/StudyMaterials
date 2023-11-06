@@ -15,7 +15,7 @@ public class Teacher extends Person
 	@Override
 	public void doSomething()
 	{
-		System.out.println(super.getName() + "is teaching...");
+		System.out.println(STR."\{super.getName()} is teaching...");
 	}
 
 	public int getSalary()
@@ -30,6 +30,6 @@ public class Teacher extends Person
 
 	public String toString()
 	{
-		return super.toString() + "Teacher{" + "salary=" + salary + '}';
+		return STR." \{super.toString()} Teacher {salary=\{salary} \{'}'}";
 	}
 }
