@@ -2,6 +2,14 @@ package StudentInformationSystem;
 
 public class ANSI
 {
+	private ANSI() {}
+
+	// 这是迫不得已加的，与RESET类一样的功能，优点是调用方便，缺点是不够直观，且和其他的调用格式不一样。
+	public static String reset()
+	{
+		return "\u001B[0m";
+	}
+
 	public static class Reset
 	{
 		private Reset () {}
