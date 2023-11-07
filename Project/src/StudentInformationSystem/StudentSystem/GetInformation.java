@@ -156,21 +156,18 @@ public class GetInformation
 
 	public static String getRandomEmail()
 	{
-		ArrayList<EmailEnums> emails = new ArrayList<EmailEnums>();
-		emails.addAll(Arrays.asList(EmailEnums.values()));
+		ArrayList<EmailEnums> emails = new ArrayList<EmailEnums>(Arrays.asList(EmailEnums.values()));
 
-		String emailHead = getRandom().ints(1, 1000000000)
-		                              .toString();
-		String emailTail = emails.get(getRandom().nextInt(emails.size()))
-		                         .getEmailAddress(emailHead);
+		long emailHead = getRandom().nextLong(100000000, 999999999);
+		String emailDomain = emails.get(getRandom().nextInt(emails.size()))
+		                           .getDomain();
 
-		return emailHead + emailTail;
+		return emailHead + "@" + emailDomain;
 	}
 
 	public static String getRandomLevel()
 	{
-		ArrayList<LevelEnums> levels = new ArrayList<LevelEnums>();
-		levels.addAll(Arrays.asList(LevelEnums.values()));
+		ArrayList<LevelEnums> levels = new ArrayList<LevelEnums>(Arrays.asList(LevelEnums.values()));
 
 		return levels.get(getRandom().nextInt(levels.size()))
 		             .getAbbreviation();
@@ -178,12 +175,16 @@ public class GetInformation
 
 	public static String getRandomPhoneNumber()
 	{
-		String phoneNumberHead = getRandom().longs(100, 199)
-		                                    .toString();
-		String phoneNumberTail = getRandom().longs(10000000, 99999999)
-		                                    .toString();
+		ArrayList<String> phoneNumberHead = new ArrayList<>(Arrays.asList("130", "131", "132", "133", "134", "135", "136",
+		                                                                  "137", "138", "139", "150", "151", "152",
+		                                                                  "153", "155", "156", "157", "158", "159",
+		                                                                  "170", "171", "172", "173", "174", "175",
+		                                                                  "176", "177", "178", "180", "181", "182",
+		                                                                  "183", "184", "185", "186", "187", "188",
+		                                                                  "189", "191", "198", "199"));
+		long phoneNumberTail = getRandom().nextLong(10000000, 99999999);
 
-		return phoneNumberHead + phoneNumberTail;
+		return String.valueOf(phoneNumberHead.get(getRandom().nextInt(phoneNumberHead.size())) + phoneNumberTail);
 	}
 
 	public static int getRandomScore()
@@ -194,5 +195,27 @@ public class GetInformation
 	public static int getRandomAge()
 	{
 		return getRandom().nextInt(18, 25);
+	}
+
+	public static String getRandomAddress()
+	{
+		ArrayList<String> addresses = new ArrayList<String>(
+				Arrays.asList("北京市海淀区", "北京市朝阳区", "北京市丰台区", "北京市石景山区", "北京市通州区",
+				              "北京市昌平区", "北京市大兴区", "北京市顺义区", "北京市房山区", "北京市门头沟区",
+				              "北京市怀柔区", "北京市平谷区", "北京市密云区", "北京市延庆区"));
+
+		return addresses.get(getRandom().nextInt(addresses.size()));
+	}
+
+	public static String getRandomName()
+	{
+
+		ArrayList<String> firstNames = new ArrayList<String>(
+				Arrays.asList("赵", "钱", "孙", "李", "周", "吴", "郑", "王"));
+		ArrayList<String> lastNames = new ArrayList<String>(
+				Arrays.asList("一", "二", "三", "四", "五", "六", "七", "八", "九"));
+
+		return firstNames.get(getRandom().nextInt(firstNames.size())) + lastNames.get(
+				getRandom().nextInt(lastNames.size()));
 	}
 }

@@ -18,50 +18,15 @@ public class StudentSystem
 		return new Scanner(System.in);
 	}
 
-	public static void initialization()
+	public static void initialization(int count)
 	{
-		students.add(new Student("John", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市朝阳区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Jack", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市海淀区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Rose", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市东城区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Lily", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市西城区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Tom", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市丰台区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Jerry", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市石景山区",
-		                         GetInformation.getRandomPhoneNumber(), GetInformation.getRandomScore()));
-		students.add(new Student("Bob", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市门头沟区",
-		                         GetInformation.getRandomPhoneNumber(), GetInformation.getRandomScore()));
-		students.add(new Student("Alice", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市房山区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Mike", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市通州区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Mary", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市顺义区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("David", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市昌平区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Lucy", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市大兴区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Frank", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市怀柔区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
-		students.add(new Student("Judy", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
-		                         GetInformation.getRandomEmail(), "北京市平谷区", GetInformation.getRandomPhoneNumber(),
-		                         GetInformation.getRandomScore()));
+		for (int i = 0; i < count; i++)
+		{
+			students.add(new Student(GetInformation.getRandomName(), GetInformation.getRandomAge(),
+			                         GetInformation.getRandomLevel(), GetInformation.getRandomEmail(),
+			                         GetInformation.getRandomAddress(), GetInformation.getRandomPhoneNumber(),
+			                         GetInformation.getRandomScore()));
+		}
 	}
 
 	public static void addStudent()
@@ -127,9 +92,4 @@ public class StudentSystem
 	{
 		return students.size();
 	}
-
-	public class StudentSystem
-	{
-
-
-	}
+}

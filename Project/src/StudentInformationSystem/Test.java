@@ -1,6 +1,5 @@
 package StudentInformationSystem;
 
-import StudentInformationSystem.ANSI.ANSI;
 import StudentInformationSystem.StudentSystem.StudentSystem;
 import StudentInformationSystem.UI.MenuChoose;
 import StudentInformationSystem.UI.UI;
@@ -16,7 +15,7 @@ public class Test
 
 	private void run()
 	{
-		StudentSystem.initialization();
+		StudentSystem.initialization(60);
 		UI.printWelcomeMassage(200, 255);
 		UI.printMainMenu(200, 255);
 		UI.printInputPrompt();
@@ -25,7 +24,7 @@ public class Test
 
 	private static void runTest()
 	{
-		StudentSystem.initialization();
+		StudentSystem.initialization(60);
 
 		StudentSystem.removeStudent();
 	}
