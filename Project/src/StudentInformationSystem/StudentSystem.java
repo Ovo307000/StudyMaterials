@@ -13,16 +13,16 @@ public class StudentSystem
 
 	public static void addStudent()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 
 		students.add(
 				new Student(getName(), getAge(), getLevel(), getEmail(), getAddress(), getPhoneNumber(), getScore()));
 
-		System.out.print("Student added successfully!");
+		System.out.println("Student added successfully!");
 
 		for (Student student : students)
 		{
-			System.out.println(student);
+			System.out.println(student.toString());
 		}
 	}
 
@@ -63,7 +63,13 @@ public class StudentSystem
 			// 输出学生级别选项
 			for (int i = 0; i < StudentLevel.values().length; i++)
 			{
-				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+
+				if (i == 0)
+				{
+					System.out.println();
+				}
+
 				System.out.println((i + 1) + ". " + StudentLevel.values()[i].getAbbreviation());
 			}
 			System.out.print(ANSI.Reset.RESET);
@@ -92,6 +98,7 @@ public class StudentSystem
 		System.out.print("Please enter the student's email: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
 
+		in.next();
 		String email = in.nextLine();
 
 		System.out.print(ANSI.Reset.RESET);
