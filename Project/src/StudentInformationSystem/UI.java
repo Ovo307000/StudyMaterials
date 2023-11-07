@@ -54,7 +54,7 @@ public class UI
 	}
 
 
-	public static void printMenu()
+	public static void printMainMenu()
 	{
 		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.YELLOW);
 		System.out.println("+----------------------------------+");
@@ -65,7 +65,7 @@ public class UI
 		System.out.println(ANSI.Reset.RESET);
 	}
 
-	public static void printMenu(int red, int green, int blue)
+	public static void printMainMenu(int red, int green, int blue)
 	{
 		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.otherColor(red, green, blue));
 		System.out.println("+----------------------------------+");
@@ -76,7 +76,7 @@ public class UI
 		System.out.println(ANSI.Reset.RESET);
 	}
 
-	public static void printMenu(int min, int max)
+	public static void printMainMenu(int min, int max)
 	{
 		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(min, max));
 		System.out.println("+----------------------------------+");

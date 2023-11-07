@@ -12,6 +12,17 @@ public class ANSI
 		return "\u001B[0m";
 	}
 
+	private static void valuecheck(int... value)
+	{
+		for (int i : value)
+		{
+			if (i < 0 || i > 255)
+			{
+				throw new IllegalArgumentException("The value must be between 0 and 255.");
+			}
+		}
+	}
+
 	public static class Reset
 	{
 		public static final String RESET = "\u001B[0m";
@@ -46,6 +57,9 @@ public class ANSI
 
 		public static String randomColor(int min, int max)
 		{
+			valuecheck(min);
+			valuecheck(max);
+
 			Random random = new Random();
 			random.setSeed(System.currentTimeMillis());
 
@@ -58,6 +72,8 @@ public class ANSI
 
 		public static String otherColor(int red, int green, int blue)
 		{
+			valuecheck(red, green, blue);
+
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
 	}
@@ -71,7 +87,7 @@ public class ANSI
 		public static final String BLUE   = "\u001B[44m";
 		public static final String PURPLE = "\u001B[45m";
 		public static final String CYAN   = "\u001B[46m";
-		public static final String WHITE = "\u001B[47m";
+		public static final String WHITE  = "\u001B[47m";
 
 		private ConsoleBackgroundColor() {}
 
@@ -89,6 +105,8 @@ public class ANSI
 
 		public static String randomColor(int min, int max)
 		{
+			valuecheck(min, max);
+
 			Random random = new Random();
 			random.setSeed(System.currentTimeMillis());
 
@@ -101,6 +119,8 @@ public class ANSI
 
 		public static String otherColor(int red, int green, int blue)
 		{
+			valuecheck(red, green, blue);
+
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
 	}

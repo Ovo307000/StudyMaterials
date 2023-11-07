@@ -2,8 +2,8 @@ package StudentInformationSystem;
 
 public class Teacher extends Person
 {
-	private final        int id;
 	private static final int nextId = 0;
+	private final        int id;
 	private final        int salary;
 
 	public Teacher(String name, int age, int id, int salary)
