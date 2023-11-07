@@ -35,6 +35,7 @@ public class ANSI
 		public static String randomColor()
 		{
 			Random random = new Random();
+			random.setSeed(System.currentTimeMillis());
 
 			int red   = random.nextInt(256);
 			int green = random.nextInt(256);
@@ -46,6 +47,7 @@ public class ANSI
 		public static String randomColor(int min, int max)
 		{
 			Random random = new Random();
+			random.setSeed(System.currentTimeMillis());
 
 			int red   = random.nextInt(min, (max + 1));
 			int green = random.nextInt(min, (max + 1));
@@ -62,8 +64,6 @@ public class ANSI
 
 	public static class ConsoleBackgroundColor
 	{
-		private ConsoleBackgroundColor() {}
-
 		public static final String BLACK  = "\u001B[40m";
 		public static final String RED    = "\u001B[41m";
 		public static final String GREEN  = "\u001B[42m";
@@ -71,25 +71,30 @@ public class ANSI
 		public static final String BLUE   = "\u001B[44m";
 		public static final String PURPLE = "\u001B[45m";
 		public static final String CYAN   = "\u001B[46m";
+		public static final String WHITE = "\u001B[47m";
 
-		public static final String WHITE  = "\u001B[47m";
+		private ConsoleBackgroundColor() {}
 
 		public static String randomColor()
 		{
-			int red   = new Random().nextInt(256);
-			int green = new Random().nextInt(256);
-			int blue  = new Random().nextInt(256);
+			Random random = new Random();
+			random.setSeed(System.currentTimeMillis());
+
+			int red   = random.nextInt(256);
+			int green = random.nextInt(256);
+			int blue  = random.nextInt(256);
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
 
 		public static String randomColor(int min, int max)
 		{
-			Random randColorValue = new Random();
+			Random random = new Random();
+			random.setSeed(System.currentTimeMillis());
 
-			int red   = new Random().nextInt(min, (max + 1));
-			int green = new Random().nextInt(min, (max + 1));
-			int blue  = new Random().nextInt(min, (max + 1));
+			int red   = random.nextInt(min, (max + 1));
+			int green = random.nextInt(min, (max + 1));
+			int blue  = random.nextInt(min, (max + 1));
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
