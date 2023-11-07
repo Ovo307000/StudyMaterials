@@ -1,8 +1,6 @@
 package StudentInformationSystem.StudentSystem;
 
 import StudentInformationSystem.ANSI.ANSI;
-import StudentInformationSystem.Enums.EmailEnums;
-import StudentInformationSystem.Enums.LevelEnums;
 import StudentInformationSystem.Person.Student;
 import StudentInformationSystem.UI.MenuChoose;
 
@@ -22,17 +20,48 @@ public class StudentSystem
 
 	public static void initialization()
 	{
-		students.add(
-				new Student("张三", 18, LevelEnums.LEVEL_8.getAbbreviation(), EmailEnums.AOL.getEmailAddress("1919810"),
-				            "北京市朝阳区", "1145141919810", 86));
-		students.add(new Student("李四", 19, LevelEnums.LEVEL_9.getAbbreviation(),
-		                         EmailEnums.HOTMAIL.getEmailAddress("114514"), "北京市海淀区", "1919810114514", 100));
-		students.add(new Student("王五", 20, LevelEnums.LEVEL_7.getAbbreviation(),
-		                         EmailEnums.YAHOO.getEmailAddress("114514"), "北京市西城区", "1145141919810", 100));
-		students.add(new Student("赵六", 21, LevelEnums.LEVEL_6.getAbbreviation(),
-		                         EmailEnums.YAHOO.getEmailAddress("1919810"), "北京市东城区", "1919810114514", 100));
-		students.add(new Student("孙七", 22, LevelEnums.LEVEL_5.getAbbreviation(),
-		                         EmailEnums.YAHOO.getEmailAddress("114514"), "北京市朝阳区", "1145141919810", 100));
+		students.add(new Student("John", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市朝阳区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Jack", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市海淀区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Rose", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市东城区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Lily", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市西城区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Tom", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市丰台区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Jerry", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市石景山区",
+		                         GetInformation.getRandomPhoneNumber(), GetInformation.getRandomScore()));
+		students.add(new Student("Bob", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市门头沟区",
+		                         GetInformation.getRandomPhoneNumber(), GetInformation.getRandomScore()));
+		students.add(new Student("Alice", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市房山区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Mike", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市通州区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Mary", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市顺义区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("David", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市昌平区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Lucy", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市大兴区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Frank", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市怀柔区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
+		students.add(new Student("Judy", GetInformation.getRandomAge(), GetInformation.getRandomLevel(),
+		                         GetInformation.getRandomEmail(), "北京市平谷区", GetInformation.getRandomPhoneNumber(),
+		                         GetInformation.getRandomScore()));
 	}
 
 	public static void addStudent()
@@ -98,4 +127,9 @@ public class StudentSystem
 	{
 		return students.size();
 	}
-}
+
+	public class StudentSystem
+	{
+
+
+	}

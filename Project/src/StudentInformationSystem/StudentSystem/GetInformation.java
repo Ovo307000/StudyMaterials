@@ -4,6 +4,10 @@ import StudentInformationSystem.ANSI.ANSI;
 import StudentInformationSystem.Enums.EmailEnums;
 import StudentInformationSystem.Enums.LevelEnums;
 
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GetInformation
@@ -15,7 +19,7 @@ public class GetInformation
 	{
 		return new Scanner(System.in);
 	}
-	
+
 	public static String getName()
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
@@ -141,5 +145,54 @@ public class GetInformation
 		System.out.print(ANSI.Reset.RESET);
 
 		return score;
+	}
+
+	public static Random getRandom()
+	{
+		SecureRandom secureRandom = new SecureRandom();
+		long         seed         = secureRandom.nextLong();
+		return new Random(seed);
+	}
+
+	public static String getRandomEmail()
+	{
+		ArrayList<EmailEnums> emails = new ArrayList<EmailEnums>();
+		emails.addAll(Arrays.asList(EmailEnums.values()));
+
+		String emailHead = getRandom().ints(1, 1000000000)
+		                              .toString();
+		String emailTail = emails.get(getRandom().nextInt(emails.size()))
+		                         .getEmailAddress(emailHead);
+
+		return emailHead + emailTail;
+	}
+
+	public static String getRandomLevel()
+	{
+		ArrayList<LevelEnums> levels = new ArrayList<LevelEnums>();
+		levels.addAll(Arrays.asList(LevelEnums.values()));
+
+		return levels.get(getRandom().nextInt(levels.size()))
+		             .getAbbreviation();
+	}
+
+	public static String getRandomPhoneNumber()
+	{
+		String phoneNumberHead = getRandom().longs(100, 199)
+		                                    .toString();
+		String phoneNumberTail = getRandom().longs(10000000, 99999999)
+		                                    .toString();
+
+		return phoneNumberHead + phoneNumberTail;
+	}
+
+	public static int getRandomScore()
+	{
+		return getRandom().nextInt(100);
+	}
+
+	public static int getRandomAge()
+	{
+		return getRandom().nextInt(18, 25);
 	}
 }
