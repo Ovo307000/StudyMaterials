@@ -30,8 +30,9 @@ public class StudentSystem
 
 	public static void addStudent()
 	{
-		students.add(
-				new Student(GetInformation.getName(), GetInformation.getAge(), GetInformation.getLevel(), GetInformation.getEmail(), GetInformation.getAddress(), GetInformation.getPhoneNumber(), GetInformation.getScore()));
+		students.add(new Student(GetInformation.getName(), GetInformation.getAge(), GetInformation.getLevel(),
+		                         GetInformation.getEmail(), GetInformation.getAddress(),
+		                         GetInformation.getPhoneNumber(), GetInformation.getScore()));
 
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 		System.out.println("Student added successfully!");

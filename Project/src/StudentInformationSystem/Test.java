@@ -1,7 +1,6 @@
 package StudentInformationSystem;
 
 import StudentInformationSystem.StudentSystem.StudentSystem;
-import StudentInformationSystem.UI.MenuChoose;
 import StudentInformationSystem.UI.UI;
 
 public class Test
