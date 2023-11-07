@@ -25,4 +25,10 @@ public class Student extends Person
 
 	public Student() {}
 
+
+	public String toString()
+	{
+		return "Student{" + "level=" + level + ", email='" + email + '\'' + ", address='" + address + '\''
+		       + ", phoneNumber='" + phoneNumber + '\'' + ", score=" + score + '}';
+	}
 }
