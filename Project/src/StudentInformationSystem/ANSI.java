@@ -34,18 +34,22 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			int red   = (int) (Math.random() * 255);
-			int green = (int) (Math.random() * 255);
-			int blue  = (int) (Math.random() * 255);
+			Random random = new Random();
+
+			int red   = random.nextInt(256);
+			int green = random.nextInt(256);
+			int blue  = random.nextInt(256);
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
 
 		public static String randomColor(int min, int max)
 		{
-			int red   = (int) (Math.random() * (max - min) + min);
-			int green = (int) (Math.random() * (max - min) + min);
-			int blue  = (int) (Math.random() * (max - min) + min);
+			Random random = new Random();
+
+			int red   = random.nextInt(min, (max + 1));
+			int green = random.nextInt(min, (max + 1));
+			int blue  = random.nextInt(min, (max + 1));
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -81,6 +85,8 @@ public class ANSI
 
 		public static String randomColor(int min, int max)
 		{
+			Random randColorValue = new Random();
+
 			int red   = new Random().nextInt(min, (max + 1));
 			int green = new Random().nextInt(min, (max + 1));
 			int blue  = new Random().nextInt(min, (max + 1));
