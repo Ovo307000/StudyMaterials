@@ -135,7 +135,7 @@ public class UI
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Student                   |");
 		System.out.println("| 2. Remove Student                |");
-		System.out.println("| 3. Update Student                |");
+		System.out.println("| 3. Modify Student                |");
 		System.out.println("| 4. List Students                 |");
 		System.out.println("| 5. Back                          |");
 		System.out.println("+----------------------------------+");
@@ -148,9 +148,10 @@ public class UI
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Student                   |");
 		System.out.println("| 2. Remove Student                |");
-		System.out.println("| 3. Update Student                |");
+		System.out.println("| 3. Modify Student                |");
 		System.out.println("| 4. List Students                 |");
-		System.out.println("| 5. Back                          |");
+		System.out.println("| 5. find Students                 |");
+		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
 		System.out.print(ANSI.Reset.RESET);
 	}
@@ -190,7 +191,7 @@ public class UI
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Teacher                   |");
 		System.out.println("| 2. Remove Teacher                |");
-		System.out.println("| 3. Update Teacher                |");
+		System.out.println("| 3. Modify Teacher                |");
 		System.out.println("| 4. List Teachers                 |");
 		System.out.println("| 5. Back                          |");
 		System.out.println("+----------------------------------+");

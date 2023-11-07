@@ -73,9 +73,7 @@ public class MenuChoose
 
 				case "3" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.println("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					StudentSystem.modifyStudentById();
 					validChoice = true;
 				}
 
@@ -86,6 +84,12 @@ public class MenuChoose
 				}
 
 				case "5" ->
+				{
+					StudentSystem.findStudentById();
+					validChoice = true;
+				}
+
+				case "6" ->
 				{
 					UI.printMainMenu(200, 255);
 					MenuChoose.mainMenu();
