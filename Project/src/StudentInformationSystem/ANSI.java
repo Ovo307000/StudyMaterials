@@ -27,8 +27,8 @@ public class ANSI
 	private static Random getSecureRandom()
 	{
 		SecureRandom secureRandom = new SecureRandom();
-		long seed = secureRandom.nextLong();
-		Random random = new Random(seed);
+		long         seed         = secureRandom.nextLong();
+		Random       random       = new Random(seed);
 
 		return random;
 	}

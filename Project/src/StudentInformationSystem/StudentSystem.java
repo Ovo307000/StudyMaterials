@@ -13,17 +13,17 @@ public class StudentSystem
 
 	public static void addStudent()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-
 		students.add(
 				new Student(getName(), getAge(), getLevel(), getEmail(), getAddress(), getPhoneNumber(), getScore()));
 
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 		System.out.println("Student added successfully!");
 
 		for (Student student : students)
 		{
 			System.out.println(student.toString());
 		}
+		System.out.println(ANSI.Reset.RESET);
 	}
 
 	public static String getName()

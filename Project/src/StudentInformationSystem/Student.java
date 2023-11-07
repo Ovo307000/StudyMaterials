@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Student extends Person
 {
-	private StudentLevel       level;
-	private String             email;
-	private String             address;
-	private String             phoneNumber;
-	private       int                score;
 	private final ArrayList<Student> students = new ArrayList<Student>();
+	private       StudentLevel       level;
+	private       String             email;
+	private       String             address;
+	private       String             phoneNumber;
+	private       int                score;
 
 
 	public Student(String name, int age, StudentLevel level, String email, String address, String phoneNumber,
@@ -28,7 +28,6 @@ public class Student extends Person
 
 	public String toString()
 	{
-		return "Student{" + "level=" + level + ", email='" + email + '\'' + ", address='" + address + '\''
-		       + ", phoneNumber='" + phoneNumber + '\'' + ", score=" + score + '}';
+		return "Student Information:\n" + "Name: " + getName() + "\n" + "Age: " + getAge() + "\n" + "Level: " + level + "\n" + "Email: " + email + "\n" + "Address: " + address + "\n" + "Phone Number: " + phoneNumber + "\n" + "Score: " + score;
 	}
 }
