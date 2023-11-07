@@ -48,7 +48,7 @@ public class StudentSystem
 		return age;
 	}
 
-	public static StudentLevel getLevel()
+	public static String getLevel()
 	{
 		boolean validChoice = false;
 		int     userChoice  = - 1;
@@ -89,21 +89,39 @@ public class StudentSystem
 
 		StudentLevel selectedLevel = StudentLevel.values()[userChoice - 1];
 
-		return selectedLevel;
+		return selectedLevel.getAbbreviation();
 	}
 
 	public static String getEmail()
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's email: ");
+		String emailHead = in.nextLine();
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		in.next();
-		String email = in.nextLine();
+		for (int i = 0; i < EmailEnums.values().length; i++)
+		{
+			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 
+			if (i == 0)
+			{
+				System.out.println();
+			}
+
+			System.out.println((i + 1) + ". "+ "@" + EmailEnums.values()[i].getDomain());
+		}
 		System.out.print(ANSI.Reset.RESET);
 
-		return email;
+		in.next();
+		int userChoice = in.nextInt();
+
+		if (userChoice < 1 || userChoice > EmailEnums.values().length)
+		{
+			System.err.println("Invalid input! Please try again.");
+			System.exit(1);
+		}
+
+		return emailHead + "@" + EmailEnums.values()[userChoice - 1].getDomain();
 	}
 
 	public static String getAddress()

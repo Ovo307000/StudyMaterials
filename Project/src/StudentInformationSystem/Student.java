@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Student extends Person
 {
 	private final ArrayList<Student> students = new ArrayList<Student>();
-	private       StudentLevel       level;
+	private       String             level;
 	private       String             email;
 	private       String             address;
 	private       String             phoneNumber;
 	private       int                score;
 
 
-	public Student(String name, int age, StudentLevel level, String email, String address, String phoneNumber,
+	public Student(String name, int age, String level, String email, String address, String phoneNumber,
 	               int score)
 	{
 		super(name, age);
