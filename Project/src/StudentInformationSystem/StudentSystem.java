@@ -5,10 +5,14 @@ import java.util.Scanner;
 
 public class StudentSystem
 {
-	private static final Scanner            in       = new Scanner(System.in);
 	private static final ArrayList<Student> students = new ArrayList<Student>();
 
 	private StudentSystem() {}
+
+	private static Scanner getScanner()
+	{
+		return new Scanner(System.in);
+	}
 
 
 	public static void addStudent()
@@ -31,7 +35,7 @@ public class StudentSystem
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's name: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		String name = in.nextLine();
+		String name = getScanner().nextLine();
 		System.out.print(ANSI.Reset.RESET);
 
 		return name;
@@ -42,7 +46,7 @@ public class StudentSystem
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's age: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		int age = in.nextInt();
+		int age = getScanner().nextInt();
 		System.out.print(ANSI.Reset.RESET);
 
 		return age;
@@ -55,28 +59,18 @@ public class StudentSystem
 
 		while (! validChoice)
 		{
-			// 设置控制台样式
-			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-			System.out.print("Please choose the student's level: ");
-			System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-
-			// 输出学生级别选项
 			for (int i = 0; i < StudentLevelEnums.values().length; i++)
 			{
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-
-				if (i == 0)
-				{
-					System.out.println();
-				}
-
 				System.out.println((i + 1) + ". " + StudentLevelEnums.values()[i].getAbbreviation());
 			}
+			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
+			System.out.print("Please choose the student's level: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			// 获取用户选择
-			userChoice = in.nextInt();
+			userChoice = getScanner().nextInt();
 
+			// 对用户输入进行检查
 			if (userChoice >= 1 && userChoice <= StudentLevelEnums.values().length)
 			{
 				validChoice = true;
@@ -86,7 +80,6 @@ public class StudentSystem
 				System.err.print("Invalid input! Please try again.");
 			}
 		}
-
 		StudentLevelEnums selectedLevel = StudentLevelEnums.values()[userChoice - 1];
 
 		return selectedLevel.getAbbreviation();
@@ -96,34 +89,28 @@ public class StudentSystem
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's email head: ");
+		String emailHead = getScanner().nextLine();
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-
-		String email = in.nextLine();
-
 		System.out.print(ANSI.Reset.RESET);
 
-		return email;
+		return emailHead;
 	}
 
 	private static String getEmailTall()
 	{
-		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		System.out.println("Please choose the student's email tall: ");
-
 		for (int i = 0; i < EmailEnums.values().length; i++)
 		{
 			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-
-			if (i == 0)
-			{
-				System.out.println();
-			}
-
 			System.out.println((i + 1) + ". " + EmailEnums.values()[i].getDomain());
 		}
+
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
+		System.out.print("Please choose the student's email tall: ");
+		int    choose    = getScanner().nextInt();
+		String emailTall = EmailEnums.values()[choose - 1].toString();
 		System.out.print(ANSI.Reset.RESET);
 
-		return EmailEnums.values()[in.nextInt() - 1].getDomain();
+		return emailTall;
 	}
 
 	public static String getEmail()
@@ -137,7 +124,7 @@ public class StudentSystem
 		System.out.print("Please enter the student's address: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		String address = in.nextLine();
+		String address = getScanner().nextLine();
 
 		System.out.print(ANSI.Reset.RESET);
 
@@ -150,7 +137,7 @@ public class StudentSystem
 		System.out.print("Please enter the student's phone number: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		String phoneNumber = in.nextLine();
+		String phoneNumber = getScanner().nextLine();
 
 		System.out.print(ANSI.Reset.RESET);
 
@@ -163,7 +150,7 @@ public class StudentSystem
 		System.out.print("Please enter the student's score: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		int score = in.nextInt();
+		int score = getScanner().nextInt();
 
 		System.out.print(ANSI.Reset.RESET);
 
