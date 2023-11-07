@@ -27,4 +27,9 @@ public enum EmailEnums
 	{
 		return domain;
 	}
+
+	public String getEmailAddress(String head)
+	{
+		return head + "@" + domain;
+	}
 }

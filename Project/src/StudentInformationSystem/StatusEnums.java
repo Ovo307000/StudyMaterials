@@ -1,5 +1,5 @@
 package StudentInformationSystem;
 
-public enum Status
+public enum StatusEnums
 {
 }
