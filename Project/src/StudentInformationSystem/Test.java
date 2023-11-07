@@ -11,10 +11,10 @@ public class Test
 	private void run()
 	{
 
-			UI.printHeader();
-			UI.printMainMenu();
-			UI.printInputPrompt();
-			MenuChoose.mainMenu();
+		UI.printHeader();
+		UI.printMainMenu();
+		UI.printInputPrompt();
+		MenuChoose.mainMenu();
 
 	}
 }

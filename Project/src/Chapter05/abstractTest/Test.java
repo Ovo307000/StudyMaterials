@@ -28,12 +28,14 @@ public class Test
 			if (person instanceof Student student)
 			{
 				System.out.println(
-						STR. "\{student.getName()} is \{student.getLevel()} level. \n He is a \{student.getClass().getSimpleName()}");
+						STR."\{student.getName()} is \{student.getLevel()} level. \n He is a \{student.getClass()
+						                                                                              .getSimpleName()}");
 			}
 			else if (person instanceof Teacher teacher)
 			{
 				System.out.println(
-						STR. "\{teacher.getName()} is \{teacher.getSalary()} salary. \n He is a \{teacher.getClass().getSimpleName()}");
+						STR."\{teacher.getName()} is \{teacher.getSalary()} salary. \n He is a \{teacher.getClass()
+						                                                                                .getSimpleName()}");
 			}
 		}
 	}

@@ -7,8 +7,8 @@ enum Size
 	LARGE("L"),
 	EXTRA_LARGE("XL");
 
-	private String abbreviation;
-	private int    number;
+	private final String abbreviation;
+	private       int    number;
 
 	Size(String abbreviation)
 	{

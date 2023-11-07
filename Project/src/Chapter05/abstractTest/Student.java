@@ -4,12 +4,6 @@ public class Student extends Person
 {
 	private int level;
 
-	@Override
-	public String toString()
-	{
-		return super.toString() + "Student{" + "level=" + level + '}';
-	}
-
 	public Student()
 	{
 	}
@@ -18,6 +12,12 @@ public class Student extends Person
 	{
 		super(name, age);
 		this.level = level;
+	}
+
+	@Override
+	public String toString()
+	{
+		return super.toString() + "Student{" + "level=" + level + '}';
 	}
 
 	public int getLevel()

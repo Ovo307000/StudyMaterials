@@ -2,10 +2,10 @@ package StudentInformationSystem;
 
 public class Person
 {
-	private String name;
-	private int    age;
-	private static int nextId = 0;
-	protected int id;
+	private static int    nextId = 0;
+	protected      int    id;
+	private        String name;
+	private        int    age;
 
 	public Person(String name, int age)
 	{
@@ -21,23 +21,23 @@ public class Person
 		return this.name;
 	}
 
-	public int getAge()
-	{
-		return this.age;
-	}
-
-	public int getId()
-	{
-		return this.id;
-	}
-
 	public void setName(String name)
 	{
 		this.name = name;
 	}
 
+	public int getAge()
+	{
+		return this.age;
+	}
+
 	public void setAge(int age)
 	{
 		this.age = age;
+	}
+
+	public int getId()
+	{
+		return this.id;
 	}
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MenuChoose
 {
-	private static Scanner in = new Scanner(System.in);
+	private static final Scanner in = new Scanner(System.in);
 
 	public static void mainMenu()
 	{
@@ -58,9 +58,7 @@ public class MenuChoose
 			{
 				case "1" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.print("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					StudentSystem.addStudent();
 					validChoice = true;
 				}
 
