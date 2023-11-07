@@ -83,9 +83,7 @@ public class MenuChoose
 
 				case "4" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.println("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					StudentSystem.printStudents();
 					validChoice = true;
 				}
 
