@@ -26,7 +26,6 @@ public class UI
 	}
 
 
-
 	public static void printHeader()
 	{
 		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.YELLOW);
@@ -127,6 +126,7 @@ public class UI
 		System.out.println("+----------------------------------+");
 		System.out.println(ANSI.Reset.RESET);
 	}
+
 	public static void printTeacherMenu()
 	{
 		System.out.println("+----------------------------------+");
