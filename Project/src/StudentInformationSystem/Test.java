@@ -11,7 +11,7 @@ public class Test
 	{
 		Test test = new Test();
 
-		runTest();
+		test.run();
 	}
 
 	private void run()
@@ -19,6 +19,7 @@ public class Test
 		StudentSystem.initialization();
 		UI.printWelcomeMassage(200, 255);
 		UI.printMainMenu(200, 255);
+		UI.printInputPrompt();
 		MenuChoose.mainMenu();
 	}
 

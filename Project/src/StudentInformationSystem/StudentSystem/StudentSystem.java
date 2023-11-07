@@ -4,6 +4,7 @@ import StudentInformationSystem.ANSI.ANSI;
 import StudentInformationSystem.Enums.EmailEnums;
 import StudentInformationSystem.Enums.LevelEnums;
 import StudentInformationSystem.Person.Student;
+import StudentInformationSystem.UI.MenuChoose;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -43,6 +44,8 @@ public class StudentSystem
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 		System.out.println(addedStudent.getName() + " added successfully!");
 		System.out.print(ANSI.Reset.RESET);
+
+		MenuChoose.studentMenu();
 	}
 
 	public static void removeStudent()
@@ -51,11 +54,12 @@ public class StudentSystem
 
 		while (! validChoice)
 		{
-			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+			System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
 			int id = getScanner().nextInt();
+			id = id - 1;
 
 			if (id >= 0 && id < students.size())
 			{
@@ -65,6 +69,8 @@ public class StudentSystem
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 				System.out.println(removedStudent.getName() + " has been removed.");
 				System.out.print(ANSI.Reset.RESET);
+
+				MenuChoose.studentMenu();
 
 				validChoice = true;
 			}
@@ -84,6 +90,8 @@ public class StudentSystem
 		}
 
 		System.out.println(ANSI.Reset.RESET);
+
+		MenuChoose.studentMenu();
 	}
 
 	public static int getStudentCount()
