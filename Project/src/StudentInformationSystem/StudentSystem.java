@@ -28,9 +28,9 @@ public class StudentSystem
 
 	public static String getName()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's name: ");
-		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		String name = in.nextLine();
 		System.out.print(ANSI.Reset.RESET);
 
@@ -39,9 +39,9 @@ public class StudentSystem
 
 	public static int getAge()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's age: ");
-		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		int age = in.nextInt();
 		System.out.print(ANSI.Reset.RESET);
 
@@ -56,9 +56,9 @@ public class StudentSystem
 		while (! validChoice)
 		{
 			// 设置控制台样式
-			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 			System.out.print("Please choose the student's level: ");
-			System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+			System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
 			// 输出学生级别选项
 			for (int i = 0; i < StudentLevel.values().length; i++)
@@ -94,9 +94,9 @@ public class StudentSystem
 
 	public static String getEmail()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's email: ");
-		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
 		in.next();
 		String email = in.nextLine();
@@ -108,9 +108,9 @@ public class StudentSystem
 
 	public static String getAddress()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's address: ");
-		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
 		String address = in.nextLine();
 
@@ -121,9 +121,9 @@ public class StudentSystem
 
 	public static String getPhoneNumber()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's phone number: ");
-		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
 		String phoneNumber = in.nextLine();
 
@@ -134,9 +134,9 @@ public class StudentSystem
 
 	public static int getScore()
 	{
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		System.out.print("Please enter the student's score: ");
-		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor());
+		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
 		int score = in.nextInt();
 
