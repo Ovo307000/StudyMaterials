@@ -1,5 +1,7 @@
 package StudentInformationSystem;
 
+import java.util.Random;
+
 public class ANSI
 {
 	private ANSI() {}
@@ -56,6 +58,8 @@ public class ANSI
 
 	public static class ConsoleBackgroundColor
 	{
+		private ConsoleBackgroundColor() {}
+
 		public static final String BLACK  = "\u001B[40m";
 		public static final String RED    = "\u001B[41m";
 		public static final String GREEN  = "\u001B[42m";
@@ -63,24 +67,23 @@ public class ANSI
 		public static final String BLUE   = "\u001B[44m";
 		public static final String PURPLE = "\u001B[45m";
 		public static final String CYAN   = "\u001B[46m";
-		public static final String WHITE  = "\u001B[47m";
 
-		private ConsoleBackgroundColor() {}
+		public static final String WHITE  = "\u001B[47m";
 
 		public static String randomColor()
 		{
-			int red   = (int) (Math.random() * 255);
-			int green = (int) (Math.random() * 255);
-			int blue  = (int) (Math.random() * 255);
+			int red   = new Random().nextInt(256);
+			int green = new Random().nextInt(256);
+			int blue  = new Random().nextInt(256);
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
 
 		public static String randomColor(int min, int max)
 		{
-			int red   = (int) (Math.random() * (max - min) + min);
-			int green = (int) (Math.random() * (max - min) + min);
-			int blue  = (int) (Math.random() * (max - min) + min);
+			int red   = new Random().nextInt(min, (max + 1));
+			int green = new Random().nextInt(min, (max + 1));
+			int blue  = new Random().nextInt(min, (max + 1));
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
