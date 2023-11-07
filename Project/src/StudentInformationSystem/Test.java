@@ -4,17 +4,14 @@ public class Test
 {
 	public static void main(String[] args)
 	{
-		UI.printHeader(175, 255);
-		UI.printMenu(175, 255);
+		for (int i = 0; i < StudentLevel.values().length; i++)
+		{
+			System.out.println((i + 1) + ". " + StudentLevel.values()[i].getAbbreviation());
+		}
 	}
 
 	private void run()
 	{
-		while (true)
-		{
-			UI.printHeader(200, 256);
-			UI.printMainMenu();
-			UI.print
-		}
+
 	}
 }

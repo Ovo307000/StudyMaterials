@@ -30,7 +30,7 @@ public class UI
 	{
 		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.YELLOW);
 		System.out.println("====================================");
-		System.out.println("= Student Information System       =");
+		System.out.println("=    Student Information System    =");
 		System.out.println("====================================");
 		System.out.println(ANSI.Reset.RESET);
 	}
@@ -87,6 +87,23 @@ public class UI
 		System.out.println(ANSI.Reset.RESET);
 	}
 
+	public static void printExitMessage()
+	{
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.YELLOW);
+		System.out.println("====================================");
+		System.out.println("= Thank you for using this system! =");
+		System.out.println("====================================");
+		System.out.println(ANSI.Reset.RESET);
+	}
+
+	public static void printExitMessage(int red, int green, int blue)
+	{
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.otherColor(red, green, blue));
+		System.out.println("====================================");
+		System.out.println("= Thank you for using this system! =");
+		System.out.println("====================================");
+		System.out.println(ANSI.Reset.RESET);
+	}
 
 	public static void printStudentMenu()
 	{
