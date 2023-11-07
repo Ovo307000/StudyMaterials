@@ -1,5 +1,6 @@
 package StudentInformationSystem;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class ANSI
@@ -21,6 +22,15 @@ public class ANSI
 				throw new IllegalArgumentException("The value must be between 0 and 255.");
 			}
 		}
+	}
+
+	private static Random getSecureRandom()
+	{
+		SecureRandom secureRandom = new SecureRandom();
+		long seed = secureRandom.nextLong();
+		Random random = new Random(seed);
+
+		return random;
 	}
 
 	public static class Reset
@@ -45,12 +55,9 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			Random random = new Random();
-			random.setSeed(System.currentTimeMillis());
-
-			int red   = random.nextInt(256);
-			int green = random.nextInt(256);
-			int blue  = random.nextInt(256);
+			int red   = getSecureRandom().nextInt(256);
+			int green = getSecureRandom().nextInt(256);
+			int blue  = getSecureRandom().nextInt(256);
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -60,12 +67,9 @@ public class ANSI
 			valuecheck(min);
 			valuecheck(max);
 
-			Random random = new Random();
-			random.setSeed(System.currentTimeMillis());
-
-			int red   = random.nextInt(min, (max + 1));
-			int green = random.nextInt(min, (max + 1));
-			int blue  = random.nextInt(min, (max + 1));
+			int red   = getSecureRandom().nextInt(min, (max + 1));
+			int blue  = getSecureRandom().nextInt(min, (max + 1));
+			int green = getSecureRandom().nextInt(min, (max + 1));
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -93,12 +97,9 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			Random random = new Random();
-			random.setSeed(System.currentTimeMillis());
-
-			int red   = random.nextInt(256);
-			int green = random.nextInt(256);
-			int blue  = random.nextInt(256);
+			int red   = getSecureRandom().nextInt(256);
+			int blue  = getSecureRandom().nextInt(256);
+			int green = getSecureRandom().nextInt(256);
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -107,12 +108,9 @@ public class ANSI
 		{
 			valuecheck(min, max);
 
-			Random random = new Random();
-			random.setSeed(System.currentTimeMillis());
-
-			int red   = random.nextInt(min, (max + 1));
-			int green = random.nextInt(min, (max + 1));
-			int blue  = random.nextInt(min, (max + 1));
+			int red   = getSecureRandom().nextInt(min, (max + 1));
+			int blue  = getSecureRandom().nextInt(min, (max + 1));
+			int green = getSecureRandom().nextInt(min, (max + 1));
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
