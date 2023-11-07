@@ -15,6 +15,5 @@ public class Test
 		UI.printMainMenu();
 		UI.printInputPrompt();
 		MenuChoose.mainMenu();
-
 	}
 }

@@ -61,7 +61,7 @@ public class StudentSystem
 			System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
 			// 输出学生级别选项
-			for (int i = 0; i < StudentLevel.values().length; i++)
+			for (int i = 0; i < StudentLevelEnums.values().length; i++)
 			{
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 
@@ -70,14 +70,14 @@ public class StudentSystem
 					System.out.println();
 				}
 
-				System.out.println((i + 1) + ". " + StudentLevel.values()[i].getAbbreviation());
+				System.out.println((i + 1) + ". " + StudentLevelEnums.values()[i].getAbbreviation());
 			}
 			System.out.print(ANSI.Reset.RESET);
 
 			// 获取用户选择
 			userChoice = in.nextInt();
 
-			if (userChoice >= 1 && userChoice <= StudentLevel.values().length)
+			if (userChoice >= 1 && userChoice <= StudentLevelEnums.values().length)
 			{
 				validChoice = true;
 			}
@@ -87,17 +87,28 @@ public class StudentSystem
 			}
 		}
 
-		StudentLevel selectedLevel = StudentLevel.values()[userChoice - 1];
+		StudentLevelEnums selectedLevel = StudentLevelEnums.values()[userChoice - 1];
 
 		return selectedLevel.getAbbreviation();
 	}
 
-	public static String getEmail()
+	private static String getEmailHead()
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		System.out.print("Please enter the student's email: ");
-		String emailHead = in.nextLine();
+		System.out.print("Please enter the student's email head: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
+
+		String email = in.nextLine();
+
+		System.out.print(ANSI.Reset.RESET);
+
+		return email;
+	}
+
+	private static String getEmailTall()
+	{
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
+		System.out.println("Please choose the student's email tall: ");
 
 		for (int i = 0; i < EmailEnums.values().length; i++)
 		{
@@ -108,20 +119,16 @@ public class StudentSystem
 				System.out.println();
 			}
 
-			System.out.println((i + 1) + ". "+ "@" + EmailEnums.values()[i].getDomain());
+			System.out.println((i + 1) + ". " + EmailEnums.values()[i].getDomain());
 		}
 		System.out.print(ANSI.Reset.RESET);
 
-		in.next();
-		int userChoice = in.nextInt();
+		return EmailEnums.values()[in.nextInt() - 1].getDomain();
+	}
 
-		if (userChoice < 1 || userChoice > EmailEnums.values().length)
-		{
-			System.err.println("Invalid input! Please try again.");
-			System.exit(1);
-		}
-
-		return emailHead + "@" + EmailEnums.values()[userChoice - 1].getDomain();
+	public static String getEmail()
+	{
+		return getEmailHead() + "@" + getEmailTall();
 	}
 
 	public static String getAddress()
