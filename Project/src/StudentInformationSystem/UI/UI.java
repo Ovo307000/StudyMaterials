@@ -124,7 +124,8 @@ public class UI
 		System.out.println("| 2. Remove Student                |");
 		System.out.println("| 3. Update Student                |");
 		System.out.println("| 4. List Students                 |");
-		System.out.println("| 5. Back                          |");
+		System.out.println("| 5. Find Students                 |");
+		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
 		System.out.print(ANSI.Reset.RESET);
 	}
@@ -137,7 +138,8 @@ public class UI
 		System.out.println("| 2. Remove Student                |");
 		System.out.println("| 3. Modify Student                |");
 		System.out.println("| 4. List Students                 |");
-		System.out.println("| 5. Back                          |");
+		System.out.println("| 5. Find Students                 |");
+		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
 		System.out.print(ANSI.Reset.RESET);
 	}
@@ -150,7 +152,7 @@ public class UI
 		System.out.println("| 2. Remove Student                |");
 		System.out.println("| 3. Modify Student                |");
 		System.out.println("| 4. List Students                 |");
-		System.out.println("| 5. find Students                 |");
+		System.out.println("| 5. Find Students                 |");
 		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
 		System.out.print(ANSI.Reset.RESET);
@@ -163,12 +165,9 @@ public class UI
 		System.out.println("| 2. Remove Teacher                |");
 		System.out.println("| 3. Update Teacher                |");
 		System.out.println("| 4. List Teachers                 |");
-		System.out.println("| 5. Back                          |");
+		System.out.println("| 5. Find Teachers                 |");
+		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
-
-		System.out.println("====================================");
-		System.out.println("= Please select an option:         =");
-		System.out.println("====================================");
 	}
 
 	public static void printTeacherMenu(int red, int green, int blue)
@@ -178,12 +177,9 @@ public class UI
 		System.out.println("| 2. Remove Teacher                |");
 		System.out.println("| 3. Update Teacher                |");
 		System.out.println("| 4. List Teachers                 |");
+		System.out.println("| 5. Find Teachers                 |");
 		System.out.println("| 5. Back                          |");
 		System.out.println("+----------------------------------+");
-
-		System.out.println("====================================");
-		System.out.println("= Please select an option:         =");
-		System.out.println("====================================");
 	}
 
 	public static void printTeacherMenu(int min, int max)
@@ -193,7 +189,8 @@ public class UI
 		System.out.println("| 2. Remove Teacher                |");
 		System.out.println("| 3. Modify Teacher                |");
 		System.out.println("| 4. List Teachers                 |");
-		System.out.println("| 5. Back                          |");
+		System.out.println("| 5. Find Teachers                 |");
+		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
 	}
 }
