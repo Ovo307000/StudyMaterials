@@ -12,8 +12,7 @@ public class Student extends Person
 	private       int                score;
 
 
-	public Student(String name, int age, String level, String email, String address, String phoneNumber,
-	               int score)
+	public Student(String name, int age, String level, String email, String address, String phoneNumber, int score)
 	{
 		super(name, age);
 		this.level       = level;
