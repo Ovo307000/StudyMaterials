@@ -1,4 +1,7 @@
-package StudentInformationSystem;
+package StudentInformationSystem.UI;
+
+import StudentInformationSystem.ANSI.ANSI;
+import StudentInformationSystem.StudentSystem.StudentSystem;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package StudentInformationSystem;
+package StudentInformationSystem.ANSI;
 
 import java.security.SecureRandom;
 import java.util.Random;

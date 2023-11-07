@@ -1,6 +1,6 @@
-package StudentInformationSystem;
+package StudentInformationSystem.Enums;
 
-public enum StudentLevelEnums
+public enum LevelEnums
 {
 	LEVEL_1("一年级"),
 	LEVEL_2("二年级"),
@@ -15,7 +15,7 @@ public enum StudentLevelEnums
 
 	private final String abbreviation;
 
-	StudentLevelEnums(String abbreviation)
+	LevelEnums(String abbreviation)
 	{
 		this.abbreviation = abbreviation;
 	}

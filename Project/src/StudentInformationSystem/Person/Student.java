@@ -1,4 +1,4 @@
-package StudentInformationSystem;
+package StudentInformationSystem.Person;
 
 import java.util.ArrayList;
 

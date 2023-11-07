@@ -1,4 +1,6 @@
-package StudentInformationSystem;
+package StudentInformationSystem.UI;
+
+import StudentInformationSystem.ANSI.ANSI;
 
 public class UI
 {
@@ -26,7 +28,7 @@ public class UI
 	}
 
 
-	public static void printHeader()
+	public static void printWelcomeMassage()
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.YELLOW);
 		System.out.println("====================================");
@@ -35,7 +37,7 @@ public class UI
 		System.out.print(ANSI.Reset.RESET);
 	}
 
-	public static void printHeader(int red, int green, int blue)
+	public static void printWelcomeMassage(int red, int green, int blue)
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.otherColor(red, green, blue));
 		System.out.println("====================================");
@@ -44,7 +46,7 @@ public class UI
 		System.out.print(ANSI.Reset.RESET);
 	}
 
-	public static void printHeader(int min, int max)
+	public static void printWelcomeMassage(int min, int max)
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(min, max));
 		System.out.println("====================================");

@@ -1,35 +1,21 @@
-package StudentInformationSystem;
+package StudentInformationSystem.StudentSystem;
 
-import java.util.ArrayList;
+import StudentInformationSystem.ANSI.ANSI;
+import StudentInformationSystem.Enums.EmailEnums;
+import StudentInformationSystem.Enums.LevelEnums;
+
 import java.util.Scanner;
 
-public class StudentSystem
+public class GetInformation
 {
-	private static final ArrayList<Student> students = new ArrayList<Student>();
+	private GetInformation() {}
 
-	private StudentSystem() {}
 
 	private static Scanner getScanner()
 	{
 		return new Scanner(System.in);
 	}
-
-
-	public static void addStudent()
-	{
-		students.add(
-				new Student(getName(), getAge(), getLevel(), getEmail(), getAddress(), getPhoneNumber(), getScore()));
-
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-		System.out.println("Student added successfully!");
-
-		for (Student student : students)
-		{
-			System.out.println(student.toString());
-		}
-		System.out.println(ANSI.Reset.RESET);
-	}
-
+	
 	public static String getName()
 	{
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
@@ -59,10 +45,10 @@ public class StudentSystem
 
 		while (! validChoice)
 		{
-			for (int i = 0; i < StudentLevelEnums.values().length; i++)
+			for (int i = 0; i < LevelEnums.values().length; i++)
 			{
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-				System.out.println((i + 1) + ". " + StudentLevelEnums.values()[i].getAbbreviation());
+				System.out.println((i + 1) + ". " + LevelEnums.values()[i].getAbbreviation());
 			}
 			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 			System.out.print("Please choose the student's level: ");
@@ -71,7 +57,7 @@ public class StudentSystem
 			userChoice = getScanner().nextInt();
 
 			// 对用户输入进行检查
-			if (userChoice >= 1 && userChoice <= StudentLevelEnums.values().length)
+			if (userChoice >= 1 && userChoice <= LevelEnums.values().length)
 			{
 				validChoice = true;
 			}
@@ -80,7 +66,7 @@ public class StudentSystem
 				System.err.print("Invalid input! Please try again.");
 			}
 		}
-		StudentLevelEnums selectedLevel = StudentLevelEnums.values()[userChoice - 1];
+		LevelEnums selectedLevel = LevelEnums.values()[userChoice - 1];
 
 		return selectedLevel.getAbbreviation();
 	}

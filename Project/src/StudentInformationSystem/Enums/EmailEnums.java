@@ -1,4 +1,4 @@
-package StudentInformationSystem;
+package StudentInformationSystem.Enums;
 
 public enum EmailEnums
 {
