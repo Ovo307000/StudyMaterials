@@ -2,20 +2,19 @@ package StudentInformationSystem.Person;
 
 public class Teacher extends Person
 {
-	private int    salary;
-	private String Subject;
-	private int    id;
-	private static int nextId = 0;
+	private static int    nextId = 0;
+	private        int    salary;
+	private        String Subject;
+	private        int    id;
 
 
-	public Teacher(String name, int age, String address, String phoneNumber, String email, int salary,
-	               String jobTitle)
+	public Teacher(String name, int age, String address, String phoneNumber, String email, int salary, String jobTitle)
 	{
 		super(name, age, address, phoneNumber, email);
 		this.salary  = salary;
 		this.Subject = jobTitle;
 
-		this.id = ++nextId;
+		this.id = ++ nextId;
 	}
 
 	public Teacher() {}

@@ -20,17 +20,22 @@ public class StudentSystem
 		for (int i = 0; i < count; i++)
 		{
 			students.add(new Student(RandomInformation.getRandomName(), RandomInformation.getRandomAge(),
-			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomLevel(), RandomInformation.getRandomEmail(),
-			                         RandomInformation.getRandomAddress(), RandomInformation.getRandomPhoneNumber(),
+			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomLevel(),
+			                         RandomInformation.getRandomEmail(), RandomInformation.getRandomAddress(),
+			                         RandomInformation.getRandomPhoneNumber(),
 			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomScore()));
 		}
 	}
 
 	public static void addStudent()
 	{
-		Student addedStudent = new Student(StudentInformationSystem.ManagementSystem.Information.getName(), StudentInformationSystem.ManagementSystem.Information.getAge(), Information.getLevel(),
-		                                   StudentInformationSystem.ManagementSystem.Information.getEmail(), StudentInformationSystem.ManagementSystem.Information.getAddress(),
-		                                   StudentInformationSystem.ManagementSystem.Information.getPhoneNumber(), Information.getScore());
+		Student addedStudent = new Student(StudentInformationSystem.ManagementSystem.Information.getName(),
+		                                   StudentInformationSystem.ManagementSystem.Information.getAge(),
+		                                   Information.getLevel(),
+		                                   StudentInformationSystem.ManagementSystem.Information.getEmail(),
+		                                   StudentInformationSystem.ManagementSystem.Information.getAddress(),
+		                                   StudentInformationSystem.ManagementSystem.Information.getPhoneNumber(),
+		                                   Information.getScore());
 
 		students.add(addedStudent);
 
@@ -52,7 +57,8 @@ public class StudentSystem
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			int id = MyScanner.getScanner().nextInt();
+			int id = MyScanner.getScanner()
+			                  .nextInt();
 			id = id - 1;
 
 			if (id >= 0 && id < students.size())
@@ -105,7 +111,8 @@ public class StudentSystem
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			int id = MyScanner.getScanner().nextInt();
+			int id = MyScanner.getScanner()
+			                  .nextInt();
 			id = id - 1;
 
 			if (id >= 0 && id < students.size())
@@ -138,7 +145,8 @@ public class StudentSystem
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			int id = MyScanner.getScanner().nextInt();
+			int id = MyScanner.getScanner()
+			                  .nextInt();
 			id = id - 1;
 
 			if (id >= 0 && id < students.size())

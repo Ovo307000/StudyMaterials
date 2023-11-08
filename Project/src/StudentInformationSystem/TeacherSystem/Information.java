@@ -13,7 +13,8 @@ public class Information
 		System.out.print("Please enter the teacher's salary: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		int salary = MyScanner.getScanner().nextInt();
+		int salary = MyScanner.getScanner()
+		                      .nextInt();
 
 		return salary;
 	}
@@ -24,7 +25,8 @@ public class Information
 		System.out.print("Please enter the teacher's subject: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		String subject = MyScanner.getScanner().nextLine();
+		String subject = MyScanner.getScanner()
+		                          .nextLine();
 
 		return subject;
 	}
