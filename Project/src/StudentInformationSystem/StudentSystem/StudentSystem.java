@@ -1,13 +1,13 @@
 package StudentInformationSystem.StudentSystem;
 
-import StudentInformationSystem.ANSI.ANSI;
-import StudentInformationSystem.Person.Person;
+import StudentInformationSystem.APIs.ANSI;
+import StudentInformationSystem.APIs.MyScanner;
+import StudentInformationSystem.ManagementSystem.RandomInformation;
 import StudentInformationSystem.Person.Student;
 import StudentInformationSystem.UI.MenuChoose;
 import StudentInformationSystem.UI.UI;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class StudentSystem
 {
@@ -15,27 +15,24 @@ public class StudentSystem
 
 	private StudentSystem() {}
 
-	private static Scanner getScanner()
-	{
-		return new Scanner(System.in);
-	}
-
 	public static void initialization(int count)
 	{
 		for (int i = 0; i < count; i++)
 		{
-			students.add(new Student(GetInformation.getRandomName(), GetInformation.getRandomAge(),
-			                         GetInformation.getRandomLevel(), GetInformation.getRandomEmail(),
-			                         GetInformation.getRandomAddress(), GetInformation.getRandomPhoneNumber(),
-			                         GetInformation.getRandomScore()));
+			students.add(new Student(RandomInformation.getRandomName(), RandomInformation.getRandomAge(),
+			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomLevel(), RandomInformation.getRandomEmail(),
+			                         RandomInformation.getRandomAddress(), RandomInformation.getRandomPhoneNumber(),
+			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomScore()));
 		}
 	}
 
 	public static void addStudent()
 	{
-		Student addedStudent = new Student(GetInformation.getName(), GetInformation.getAge(), GetInformation.getLevel(),
-		                                   GetInformation.getEmail(), GetInformation.getAddress(),
-		                                   GetInformation.getPhoneNumber(), GetInformation.getScore());
+		Student addedStudent = new Student(StudentInformationSystem.ManagementSystem.Information.getName(), StudentInformationSystem.ManagementSystem.Information.getAge(), Information.getLevel(),
+		                                   StudentInformationSystem.ManagementSystem.Information.getEmail(), StudentInformationSystem.ManagementSystem.Information.getAddress(),
+		                                   StudentInformationSystem.ManagementSystem.Information.getPhoneNumber(), Information.getScore());
+
+		students.add(addedStudent);
 
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 		System.out.println(addedStudent.getName() + " added successfully!");
@@ -55,7 +52,7 @@ public class StudentSystem
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			int id = getScanner().nextInt();
+			int id = MyScanner.getScanner().nextInt();
 			id = id - 1;
 
 			if (id >= 0 && id < students.size())
@@ -79,12 +76,12 @@ public class StudentSystem
 		}
 	}
 
-	public static void printStudents()
+	public static void printAllStudents()
 	{
 		for (Student student : students)
 		{
 			System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-			System.out.println(student.toString());
+			System.out.println(student.getInformation());
 		}
 
 		System.out.println(ANSI.Reset.RESET);
@@ -108,7 +105,7 @@ public class StudentSystem
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			int id = getScanner().nextInt();
+			int id = MyScanner.getScanner().nextInt();
 			id = id - 1;
 
 			if (id >= 0 && id < students.size())
@@ -116,7 +113,7 @@ public class StudentSystem
 				Student foundStudent = students.get(id);
 
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-				System.out.println(foundStudent.toString());
+				System.out.println(foundStudent.getInformation());
 				System.out.print(ANSI.Reset.RESET);
 
 				UI.printStudentMenu(200, 255);
@@ -141,7 +138,7 @@ public class StudentSystem
 			System.out.print("Please enter the student's id: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			int id = getScanner().nextInt();
+			int id = MyScanner.getScanner().nextInt();
 			id = id - 1;
 
 			if (id >= 0 && id < students.size())
@@ -149,24 +146,24 @@ public class StudentSystem
 				Student modifiedStudent = students.get(id);
 
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-				System.out.println(modifiedStudent.toString());
+				System.out.println(modifiedStudent.getInformation());
 				System.out.print(ANSI.Reset.RESET);
 
 				System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 				System.out.println("Please enter the student's new information: ");
 				System.out.print(ANSI.Reset.RESET);
 
-				modifiedStudent.setName(GetInformation.getName());
-				modifiedStudent.setAge(GetInformation.getAge());
-				modifiedStudent.setLevel(GetInformation.getLevel());
-				modifiedStudent.setEmail(GetInformation.getEmail());
-				modifiedStudent.setAddress(GetInformation.getAddress());
-				modifiedStudent.setPhoneNumber(GetInformation.getPhoneNumber());
-				modifiedStudent.setScore(GetInformation.getScore());
+				modifiedStudent.setName(StudentInformationSystem.ManagementSystem.Information.getName());
+				modifiedStudent.setAge(StudentInformationSystem.ManagementSystem.Information.getAge());
+				modifiedStudent.setLevel(Information.getLevel());
+				modifiedStudent.setEmail(StudentInformationSystem.ManagementSystem.Information.getEmail());
+				modifiedStudent.setAddress(StudentInformationSystem.ManagementSystem.Information.getAddress());
+				modifiedStudent.setPhoneNumber(StudentInformationSystem.ManagementSystem.Information.getPhoneNumber());
+				modifiedStudent.setScore(Information.getScore());
 
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 				System.out.println(modifiedStudent.getName() + " has been modified.");
-				System.out.println(modifiedStudent.toString());
+				System.out.println(modifiedStudent.getInformation());
 				System.out.print(ANSI.Reset.RESET);
 
 				UI.printStudentMenu(200, 255);

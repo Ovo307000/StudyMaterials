@@ -1,6 +1,6 @@
 package StudentInformationSystem.UI;
 
-import StudentInformationSystem.ANSI.ANSI;
+import StudentInformationSystem.APIs.ANSI;
 
 public class UI
 {
@@ -163,7 +163,7 @@ public class UI
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Teacher                   |");
 		System.out.println("| 2. Remove Teacher                |");
-		System.out.println("| 3. Update Teacher                |");
+		System.out.println("| 3. Modify Teacher                |");
 		System.out.println("| 4. List Teachers                 |");
 		System.out.println("| 5. Find Teachers                 |");
 		System.out.println("| 6. Back                          |");
@@ -175,7 +175,7 @@ public class UI
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Teacher                   |");
 		System.out.println("| 2. Remove Teacher                |");
-		System.out.println("| 3. Update Teacher                |");
+		System.out.println("| 3. Modify Teacher                |");
 		System.out.println("| 4. List Teachers                 |");
 		System.out.println("| 5. Find Teachers                 |");
 		System.out.println("| 5. Back                          |");

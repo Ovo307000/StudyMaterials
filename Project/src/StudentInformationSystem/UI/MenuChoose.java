@@ -1,7 +1,8 @@
 package StudentInformationSystem.UI;
 
-import StudentInformationSystem.ANSI.ANSI;
+import StudentInformationSystem.APIs.ANSI;
 import StudentInformationSystem.StudentSystem.StudentSystem;
+import StudentInformationSystem.TeacherSystem.TeacherSystem;
 
 import java.util.Scanner;
 
@@ -24,12 +25,14 @@ public class MenuChoose
 				{
 					UI.printStudentMenu(200, 255);
 					MenuChoose.studentMenu();
+					UI.printInputPrompt(200, 255);
 					validChoice = true;
 				}
 				case "2" ->
 				{
 					UI.printTeacherMenu(200, 255);
 					MenuChoose.teacherMenu();
+					UI.printInputPrompt(200, 255);
 					validChoice = true;
 				}
 
@@ -79,7 +82,7 @@ public class MenuChoose
 
 				case "4" ->
 				{
-					StudentSystem.printStudents();
+					StudentSystem.printAllStudents();
 					validChoice = true;
 				}
 
@@ -117,37 +120,35 @@ public class MenuChoose
 			{
 				case "1" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.println("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					TeacherSystem.addTeacher();
 					validChoice = true;
 				}
 
 				case "2" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.println("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					TeacherSystem.removeTeacher();
 					validChoice = true;
 				}
 
 				case "3" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.println("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					TeacherSystem.modifyTeacher();
 					validChoice = true;
 				}
 
 				case "4" ->
 				{
-					System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-					System.out.println("Being developed...");
-					System.out.print(ANSI.Reset.RESET);
+					TeacherSystem.printAllTeachers();
 					validChoice = true;
 				}
 
 				case "5" ->
+				{
+					TeacherSystem.findTeacherById();
+					validChoice = true;
+				}
+
+				case "6" ->
 				{
 					UI.printMainMenu(200, 255);
 					MenuChoose.mainMenu();

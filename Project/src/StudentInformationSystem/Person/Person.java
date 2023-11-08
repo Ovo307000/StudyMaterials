@@ -2,23 +2,26 @@ package StudentInformationSystem.Person;
 
 public class Person
 {
-	private static int    nextId = 0;
-	protected      int    id;
 	private        String name;
 	private        int    age;
+	private        String address;
+	private        String phoneNumber;
+	private        String email;
 
-	public Person(String name, int age)
+	public Person(String name, int age, String address, String phoneNumber, String email)
 	{
-		this.name = name;
-		this.age  = age;
-		this.id   = ++ nextId;
+		this.name        = name;
+		this.age         = age;
+		this.address     = address;
+		this.phoneNumber = phoneNumber;
+		this.email       = email;
 	}
 
 	public Person() {}
 
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name)
@@ -28,7 +31,7 @@ public class Person
 
 	public int getAge()
 	{
-		return this.age;
+		return age;
 	}
 
 	public void setAge(int age)
@@ -36,8 +39,40 @@ public class Person
 		this.age = age;
 	}
 
-	public int getId()
+	public String getAddress()
 	{
-		return this.id;
+		return address;
+	}
+
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+
+	public String getPhoneNumber()
+	{
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber)
+	{
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEmail()
+	{
+		return email;
+	}
+
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+
+	public String getInformation()
+	{
+
+		return "Name: " + name + "\n" + "Age: " + age + "\n" + "Address: " + address + "\n" + "Phone Number: " + phoneNumber + "\n" + "Email: " + email;
+
 	}
 }

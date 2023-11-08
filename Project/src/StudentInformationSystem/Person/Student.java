@@ -4,25 +4,28 @@ import java.util.ArrayList;
 
 public class Student extends Person
 {
-	private final ArrayList<Student> students = new ArrayList<Student>();
-	private       String             level;
-	private       String             email;
-	private       String             address;
-	private       String             phoneNumber;
-	private       int                score;
+	private static int                nextId   = 0;
+	private final  ArrayList<Student> students = new ArrayList<Student>();
+	private        String             level;
+	private        int                score;
+	private        int                id;
 
 
-	public Student(String name, int age, String level, String email, String address, String phoneNumber, int score)
+	public Student(String name, int age, String address, String phoneNumber, String email, String level, int score)
 	{
-		super(name, age);
-		this.level       = level;
-		this.email       = email;
-		this.address     = address;
-		this.phoneNumber = phoneNumber;
-		this.score       = score;
+		super(name, age, address, phoneNumber, email);
+		this.level = level;
+		this.score = score;
+
+		this.id = ++nextId;
 	}
 
 	public Student() {}
+
+	public ArrayList<Student> getStudents()
+	{
+		return students;
+	}
 
 	public String getLevel()
 	{
@@ -32,36 +35,6 @@ public class Student extends Person
 	public void setLevel(String level)
 	{
 		this.level = level;
-	}
-
-	public String getEmail()
-	{
-		return email;
-	}
-
-	public void setEmail(String email)
-	{
-		this.email = email;
-	}
-
-	public String getAddress()
-	{
-		return address;
-	}
-
-	public void setAddress(String address)
-	{
-		this.address = address;
-	}
-
-	public String getPhoneNumber()
-	{
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber)
-	{
-		this.phoneNumber = phoneNumber;
 	}
 
 	public int getScore()
@@ -74,8 +47,8 @@ public class Student extends Person
 		this.score = score;
 	}
 
-	public String toString()
+	public String getInformation()
 	{
-		return "Student Information:\n" + "Name: " + getName() + "\n" + "Age: " + getAge() + "\n" + "Level: " + level + "\n" + "Email: " + email + "\n" + "Address: " + address + "\n" + "Phone Number: " + phoneNumber + "\n" + "Score: " + score + "\n" + "ID: " + getId() + "\n";
+		return super.getInformation() + "\nLevel: " + getLevel() + "\nScore: " + getScore() + "\n" + "ID: " + id + "\n";
 	}
 }

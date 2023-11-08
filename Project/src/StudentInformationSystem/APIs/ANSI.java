@@ -1,4 +1,4 @@
-package StudentInformationSystem.ANSI;
+package StudentInformationSystem.APIs;
 
 import java.security.SecureRandom;
 import java.util.Random;
@@ -24,15 +24,6 @@ public class ANSI
 		}
 	}
 
-	private static Random getSecureRandom()
-	{
-		SecureRandom secureRandom = new SecureRandom();
-		long         seed         = secureRandom.nextLong();
-		Random       random       = new Random(seed);
-
-		return random;
-	}
-
 	public static class Reset
 	{
 		public static final String RESET = "\u001B[0m";
@@ -55,9 +46,9 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			int red   = getSecureRandom().nextInt(256);
-			int green = getSecureRandom().nextInt(256);
-			int blue  = getSecureRandom().nextInt(256);
+			int red   = MyRandom.secureRandom().nextInt(256);
+			int green = MyRandom.secureRandom().nextInt(256);
+			int blue  = MyRandom.secureRandom().nextInt(256);
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -67,9 +58,9 @@ public class ANSI
 			valuecheck(min);
 			valuecheck(max);
 
-			int red   = getSecureRandom().nextInt(min, (max + 1));
-			int blue  = getSecureRandom().nextInt(min, (max + 1));
-			int green = getSecureRandom().nextInt(min, (max + 1));
+			int red   = MyRandom.secureRandom().nextInt(min, (max + 1));
+			int blue  = MyRandom.secureRandom().nextInt(min, (max + 1));
+			int green = MyRandom.secureRandom().nextInt(min, (max + 1));
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -97,9 +88,9 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			int red   = getSecureRandom().nextInt(256);
-			int blue  = getSecureRandom().nextInt(256);
-			int green = getSecureRandom().nextInt(256);
+			int red   = MyRandom.secureRandom().nextInt(256);
+			int blue  = MyRandom.secureRandom().nextInt(256);
+			int green = MyRandom.secureRandom().nextInt(256);
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -108,9 +99,9 @@ public class ANSI
 		{
 			valuecheck(min, max);
 
-			int red   = getSecureRandom().nextInt(min, (max + 1));
-			int blue  = getSecureRandom().nextInt(min, (max + 1));
-			int green = getSecureRandom().nextInt(min, (max + 1));
+			int red   = MyRandom.secureRandom().nextInt(min, (max + 1));
+			int blue  = MyRandom.secureRandom().nextInt(min, (max + 1));
+			int green = MyRandom.secureRandom().nextInt(min, (max + 1));
 
 			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
 		}
