@@ -17,7 +17,7 @@ public class Student extends Person
 		this.level = level;
 		this.score = score;
 
-		this.id = ++nextId;
+		this.id = ++ nextId;
 	}
 
 	public Student() {}

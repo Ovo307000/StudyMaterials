@@ -13,7 +13,8 @@ public class Information
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		java.lang.System.out.print("Please enter the student's name: ");
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		String name = MyScanner.getScanner().nextLine();
+		String name = MyScanner.getScanner()
+		                       .nextLine();
 		java.lang.System.out.print(ANSI.Reset.RESET);
 
 		return name;
@@ -24,7 +25,8 @@ public class Information
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		java.lang.System.out.print("Please enter the student's age: ");
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		int age = MyScanner.getScanner().nextInt();
+		int age = MyScanner.getScanner()
+		                   .nextInt();
 		java.lang.System.out.print(ANSI.Reset.RESET);
 
 		return age;
@@ -34,7 +36,8 @@ public class Information
 	{
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		java.lang.System.out.print("Please enter the student's email head: ");
-		String emailHead = MyScanner.getScanner().nextLine();
+		String emailHead = MyScanner.getScanner()
+		                            .nextLine();
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		java.lang.System.out.print(ANSI.Reset.RESET);
 
@@ -51,7 +54,8 @@ public class Information
 
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 		java.lang.System.out.print("Please choose the student's email tall: ");
-		int    choose    = MyScanner.getScanner().nextInt();
+		int    choose    = MyScanner.getScanner()
+		                            .nextInt();
 		String emailTall = EmailEnums.values()[choose - 1].toString();
 		java.lang.System.out.print(ANSI.Reset.RESET);
 
@@ -69,7 +73,8 @@ public class Information
 		java.lang.System.out.print("Please enter the student's address: ");
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		String address = MyScanner.getScanner().nextLine();
+		String address = MyScanner.getScanner()
+		                          .nextLine();
 
 		java.lang.System.out.print(ANSI.Reset.RESET);
 
@@ -82,7 +87,8 @@ public class Information
 		java.lang.System.out.print("Please enter the student's phone number: ");
 		java.lang.System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		String phoneNumber = MyScanner.getScanner().nextLine();
+		String phoneNumber = MyScanner.getScanner()
+		                              .nextLine();
 
 		java.lang.System.out.print(ANSI.Reset.RESET);
 

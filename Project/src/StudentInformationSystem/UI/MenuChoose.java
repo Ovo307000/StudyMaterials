@@ -1,6 +1,5 @@
 package StudentInformationSystem.UI;
 
-import StudentInformationSystem.APIs.ANSI;
 import StudentInformationSystem.StudentSystem.StudentSystem;
 import StudentInformationSystem.TeacherSystem.TeacherSystem;
 
