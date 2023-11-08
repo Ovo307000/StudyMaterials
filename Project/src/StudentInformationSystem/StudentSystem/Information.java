@@ -24,8 +24,7 @@ public class Information
 			System.out.print("Please choose the student's level: ");
 			System.out.print(ANSI.Reset.RESET);
 
-			userChoice = MyScanner.getScanner()
-			                      .nextInt();
+			userChoice = MyScanner.getScanner().nextInt();
 
 			// 对用户输入进行检查
 			if (userChoice >= 1 && userChoice <= LevelEnums.values().length)
@@ -48,8 +47,7 @@ public class Information
 		System.out.print("Please enter the student's score: ");
 		System.out.print(ANSI.ConsoleFontStyle.ITALIC + ANSI.ConsoleForegroundColor.randomColor(175, 255));
 
-		int score = MyScanner.getScanner()
-		                     .nextInt();
+		int score = MyScanner.getScanner().nextInt();
 
 		System.out.print(ANSI.Reset.RESET);
 

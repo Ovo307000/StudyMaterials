@@ -2,11 +2,11 @@ package StudentInformationSystem.Person;
 
 public class Person
 {
-	private String name;
-	private int    age;
-	private String address;
-	private String phoneNumber;
-	private String email;
+	private        String name;
+	private        int    age;
+	private        String address;
+	private        String phoneNumber;
+	private        String email;
 
 	public Person(String name, int age, String address, String phoneNumber, String email)
 	{

@@ -14,14 +14,12 @@ public class RandomInformation
 	{
 		ArrayList<LevelEnums> levels = new ArrayList<LevelEnums>(Arrays.asList(LevelEnums.values()));
 
-		return levels.get(MyRandom.secureRandom()
-		                          .nextInt(levels.size()))
+		return levels.get(MyRandom.secureRandom().nextInt(levels.size()))
 		             .getAbbreviation();
 	}
 
 	public static int getRandomScore()
 	{
-		return MyRandom.secureRandom()
-		               .nextInt(100);
+		return MyRandom.secureRandom().nextInt(100);
 	}
 }

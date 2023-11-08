@@ -14,14 +14,6 @@ public class Test
 		test.run();
 	}
 
-	private static void runTest()
-	{
-		StudentSystem.initialization(60);
-		TeacherSystem.initialization(60);
-
-		StudentSystem.removeStudent();
-	}
-
 	private void run()
 	{
 		StudentSystem.initialization(60);
@@ -30,5 +22,13 @@ public class Test
 		UI.printMainMenu(200, 255);
 		UI.printInputPrompt();
 		MenuChoose.mainMenu();
+	}
+
+	private static void runTest()
+	{
+		StudentSystem.initialization(60);
+		TeacherSystem.initialization(60);
+
+		StudentSystem.removeStudent();
 	}
 }
