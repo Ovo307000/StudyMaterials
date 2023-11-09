@@ -43,12 +43,12 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			int red   = MyRandom.secureRandom()
-			                    .nextInt(256);
+			int red = MyRandom.secureRandom()
+			                  .nextInt(256);
 			int green = MyRandom.secureRandom()
 			                    .nextInt(256);
-			int blue  = MyRandom.secureRandom()
-			                    .nextInt(256);
+			int blue = MyRandom.secureRandom()
+			                   .nextInt(256);
 
 			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
 		}
@@ -58,10 +58,10 @@ public class ANSI
 			valuecheck(min);
 			valuecheck(max);
 
-			int red   = MyRandom.secureRandom()
-			                    .nextInt(min, (max + 1));
-			int blue  = MyRandom.secureRandom()
-			                    .nextInt(min, (max + 1));
+			int red = MyRandom.secureRandom()
+			                  .nextInt(min, (max + 1));
+			int blue = MyRandom.secureRandom()
+			                   .nextInt(min, (max + 1));
 			int green = MyRandom.secureRandom()
 			                    .nextInt(min, (max + 1));
 
@@ -91,10 +91,10 @@ public class ANSI
 
 		public static String randomColor()
 		{
-			int red   = MyRandom.secureRandom()
-			                    .nextInt(256);
-			int blue  = MyRandom.secureRandom()
-			                    .nextInt(256);
+			int red = MyRandom.secureRandom()
+			                  .nextInt(256);
+			int blue = MyRandom.secureRandom()
+			                   .nextInt(256);
 			int green = MyRandom.secureRandom()
 			                    .nextInt(256);
 
@@ -105,10 +105,10 @@ public class ANSI
 		{
 			valuecheck(min, max);
 
-			int red   = MyRandom.secureRandom()
-			                    .nextInt(min, (max + 1));
-			int blue  = MyRandom.secureRandom()
-			                    .nextInt(min, (max + 1));
+			int red = MyRandom.secureRandom()
+			                  .nextInt(min, (max + 1));
+			int blue = MyRandom.secureRandom()
+			                   .nextInt(min, (max + 1));
 			int green = MyRandom.secureRandom()
 			                    .nextInt(min, (max + 1));
 
