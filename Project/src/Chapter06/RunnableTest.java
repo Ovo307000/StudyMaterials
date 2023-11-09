@@ -1,7 +1,6 @@
 package Chapter06;
 
-public class RunnableTest
-	implements Runnable
+public class RunnableTest implements Runnable
 {
 	@Override
 	public void run()

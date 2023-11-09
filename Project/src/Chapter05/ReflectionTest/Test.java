@@ -1,7 +1,5 @@
 package Chapter05.ReflectionTest;
 
-import Chapter04.Employee;
-
 public class Test
 {
 	public static void main(String[] args)

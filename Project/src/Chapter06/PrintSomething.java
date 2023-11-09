@@ -13,7 +13,8 @@ public class PrintSomething
 			for (char character : chars)
 			{
 				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor());
-				System.out.print(Thread.currentThread().getName()+ ": " + character + "\t");
+				System.out.print(Thread.currentThread()
+				                       .getName() + ": " + character + "\t");
 
 				try
 				{
