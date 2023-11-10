@@ -37,6 +37,8 @@ public class TeacherSystem
 		                                   StudentInformationSystem.TeacherSystem.Information.getSalary(),
 		                                   StudentInformationSystem.TeacherSystem.Information.getSubject());
 
+		teachers.add(addedteacher);
+
 		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
 		System.out.println(addedteacher.getName() + " added successfully!");
 		System.out.print(ANSI.Reset.RESET);
