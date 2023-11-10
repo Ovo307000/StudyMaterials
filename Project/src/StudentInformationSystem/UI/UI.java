@@ -160,6 +160,7 @@ public class UI
 
 	public static void printTeacherMenu()
 	{
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.YELLOW);
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Teacher                   |");
 		System.out.println("| 2. Remove Teacher                |");
@@ -168,10 +169,12 @@ public class UI
 		System.out.println("| 5. Find Teachers                 |");
 		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
+		System.out.println(ANSI.Reset.RESET);
 	}
 
 	public static void printTeacherMenu(int red, int green, int blue)
 	{
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.otherColor(red, green, blue));
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Teacher                   |");
 		System.out.println("| 2. Remove Teacher                |");
@@ -180,10 +183,12 @@ public class UI
 		System.out.println("| 5. Find Teachers                 |");
 		System.out.println("| 5. Back                          |");
 		System.out.println("+----------------------------------+");
+		System.out.println(ANSI.Reset.RESET);
 	}
 
 	public static void printTeacherMenu(int min, int max)
 	{
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(min, max));
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add Teacher                   |");
 		System.out.println("| 2. Remove Teacher                |");
@@ -192,5 +197,6 @@ public class UI
 		System.out.println("| 5. Find Teachers                 |");
 		System.out.println("| 6. Back                          |");
 		System.out.println("+----------------------------------+");
+		System.out.print(ANSI.Reset.RESET);
 	}
 }

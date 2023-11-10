@@ -16,8 +16,8 @@ public class Test
 
 	private static void runTest()
 	{
-		StudentSystem.initialization(60);
-		TeacherSystem.initialization(60);
+		StudentSystem.initialization(300);
+		TeacherSystem.initialization(300);
 
 		StudentSystem.removeStudent();
 	}
@@ -28,7 +28,6 @@ public class Test
 		TeacherSystem.initialization(60);
 		UI.printWelcomeMassage(200, 255);
 		UI.printMainMenu(200, 255);
-		UI.printInputPrompt();
 		MenuChoose.mainMenu();
 	}
 }

@@ -37,11 +37,16 @@ public class TeacherSystem
 		                                   StudentInformationSystem.TeacherSystem.Information.getSalary(),
 		                                   StudentInformationSystem.TeacherSystem.Information.getSubject());
 
-		teachers.add(addedteacher);
-
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-		System.out.println(addedteacher.getName() + " added successfully!");
-		System.out.print(ANSI.Reset.RESET);
+		if (teachers.add(addedteacher))
+		{
+			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+			System.out.println(addedteacher.getName() + " added successfully!");
+			System.out.print(ANSI.Reset.RESET);
+		}
+		else
+		{
+			System.err.println("Failed to add " + addedteacher.getName() + "!");
+		}
 
 		UI.printTeacherMenu(200, 255);
 		MenuChoose.teacherMenu();
@@ -180,6 +185,16 @@ public class TeacherSystem
 			System.out.println(teacher.getInformation());
 			System.out.print(ANSI.Reset.RESET);
 		}
+
+		UI.printTeacherMenu(200, 255);
+		MenuChoose.teacherMenu();
+	}
+
+	public static void printAllTeachersCount()
+	{
+		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+		System.out.println("There are " + teachers.size() + " teachers in the system.");
+		System.out.print(ANSI.Reset.RESET);
 
 		UI.printTeacherMenu(200, 255);
 		MenuChoose.teacherMenu();

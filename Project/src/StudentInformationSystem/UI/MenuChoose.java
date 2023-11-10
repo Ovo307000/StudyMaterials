@@ -1,22 +1,27 @@
 package StudentInformationSystem.UI;
 
+import StudentInformationSystem.APIs.MyScanner;
 import StudentInformationSystem.StudentSystem.StudentSystem;
 import StudentInformationSystem.TeacherSystem.TeacherSystem;
 
-import java.util.Scanner;
-
 public class MenuChoose
 {
-	private static final Scanner in = new Scanner(System.in);
-
 	public static void mainMenu()
 	{
 		boolean validChoice = false;
+		int     tryCount    = 0;
 
 		while (! validChoice)
 		{
-			String choose = in.next();
-			validChoice = false;
+			if (tryCount >= 3)
+			{
+				System.err.println("Too many invalid inputs, exiting...");
+				System.exit(1);
+			}
+
+			UI.printInputPrompt(200, 255);
+			String choose = MyScanner.getScanner()
+			                         .next();
 
 			switch (choose)
 			{
@@ -24,14 +29,12 @@ public class MenuChoose
 				{
 					UI.printStudentMenu(200, 255);
 					MenuChoose.studentMenu();
-					UI.printInputPrompt(200, 255);
 					validChoice = true;
 				}
 				case "2" ->
 				{
 					UI.printTeacherMenu(200, 255);
 					MenuChoose.teacherMenu();
-					UI.printInputPrompt(200, 255);
 					validChoice = true;
 				}
 
@@ -44,8 +47,8 @@ public class MenuChoose
 
 				default ->
 				{
+					tryCount++;
 					System.err.println("Invalid input, please try again.");
-					validChoice = false;
 				}
 			}
 		}
@@ -54,10 +57,20 @@ public class MenuChoose
 	public static void studentMenu()
 	{
 		boolean validChoice = false;
+		int     tryCount    = 0;
 
 		while (! validChoice)
 		{
-			String choose = in.next();
+			if (tryCount >= 3)
+			{
+				System.err.println("Too many invalid inputs, exiting...");
+				System.exit(1);
+			}
+
+			UI.printInputPrompt(200, 255);
+			String choose = MyScanner.getScanner()
+			                         .next();
+
 
 			switch (choose)
 			{
@@ -82,6 +95,7 @@ public class MenuChoose
 				case "4" ->
 				{
 					StudentSystem.printAllStudents();
+					StudentSystem.printAllStudentsCount();
 					validChoice = true;
 				}
 
@@ -100,8 +114,8 @@ public class MenuChoose
 
 				default ->
 				{
+					tryCount++;
 					System.err.println("Invalid input, please try again.");
-					validChoice = false;
 				}
 			}
 		}
@@ -110,10 +124,19 @@ public class MenuChoose
 	public static void teacherMenu()
 	{
 		boolean validChoice = false;
+		int     tryCount    = 0;
 
 		while (! validChoice)
 		{
-			String choose = in.next();
+			if (tryCount >= 3)
+			{
+				System.err.println("Too many invalid inputs, exiting...");
+				System.exit(1);
+			}
+
+			UI.printInputPrompt(200, 255);
+			String choose = MyScanner.getScanner()
+			                         .next();
 
 			switch (choose)
 			{
@@ -138,6 +161,7 @@ public class MenuChoose
 				case "4" ->
 				{
 					TeacherSystem.printAllTeachers();
+					TeacherSystem.printAllTeachersCount();
 					validChoice = true;
 				}
 
@@ -156,8 +180,8 @@ public class MenuChoose
 
 				default ->
 				{
+					tryCount++;
 					System.err.println("Invalid input, please try again.");
-					validChoice = false;
 				}
 			}
 		}

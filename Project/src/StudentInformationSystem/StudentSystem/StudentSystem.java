@@ -37,11 +37,17 @@ public class StudentSystem
 		                                   StudentInformationSystem.ManagementSystem.Information.getPhoneNumber(),
 		                                   Information.getScore());
 
-		students.add(addedStudent);
+		if (students.add(addedStudent))
+		{
+			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+			System.out.println(addedStudent.getName() + " added successfully!");
+			System.out.print(ANSI.Reset.RESET);
+		}
+		else
+		{
+			System.err.println("Failed to add " + addedStudent.getName() + "!");
+		}
 
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-		System.out.println(addedStudent.getName() + " added successfully!");
-		System.out.print(ANSI.Reset.RESET);
 
 		UI.printStudentMenu(200, 255);
 		MenuChoose.studentMenu();
@@ -96,9 +102,14 @@ public class StudentSystem
 		MenuChoose.studentMenu();
 	}
 
-	public static int getStudentCount()
+	public static void printAllStudentsCount()
 	{
-		return students.size();
+		System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+		System.out.println("There are " + students.size() + " students in the system.");
+		System.out.print(ANSI.Reset.RESET);
+
+		UI.printStudentMenu(200, 255);
+		MenuChoose.studentMenu();
 	}
 
 	public static void findStudentById()

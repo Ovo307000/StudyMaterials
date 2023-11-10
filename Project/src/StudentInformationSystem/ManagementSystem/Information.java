@@ -46,20 +46,34 @@ public class Information
 
 	private static String getEmailTall()
 	{
-		for (int i = 0; i < EmailEnums.values().length; i++)
+		boolean validChoice = false;
+		int     userChoice  = - 1;
+
+		while (! validChoice)
 		{
-			System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
-			System.out.println((i + 1) + ". " + EmailEnums.values()[i].getDomain());
+			System.out.println(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+			System.out.println("Please choose the student's email tall: ");
+
+			for (int i = 0; i < EmailEnums.values().length; i++)
+			{
+				System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(200, 255));
+				System.out.println((i + 1) + ". " + EmailEnums.values()[i].getDomain());
+			}
+
+			userChoice = MyScanner.getScanner()
+			                      .nextInt();
+
+			if (userChoice >= 1 && userChoice <= EmailEnums.values().length)
+			{
+				validChoice = true;
+			}
+			else
+			{
+				System.err.print("Invalid input! Please try again.");
+			}
 		}
 
-		System.out.print(ANSI.ConsoleFontStyle.BOLD + ANSI.ConsoleForegroundColor.randomColor(175, 255));
-		System.out.print("Please choose the student's email tall: ");
-		int choose = MyScanner.getScanner()
-		                      .nextInt();
-		String emailTall = EmailEnums.values()[choose - 1].toString();
-		System.out.print(ANSI.Reset.RESET);
-
-		return emailTall;
+		return EmailEnums.values()[userChoice - 1].getDomain();
 	}
 
 	public static String getEmail()
