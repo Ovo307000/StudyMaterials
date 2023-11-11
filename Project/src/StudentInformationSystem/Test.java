@@ -1,17 +1,18 @@
 package StudentInformationSystem;
 
+import StudentInformationSystem.APIs.ANSI;
 import StudentInformationSystem.StudentSystem.StudentSystem;
 import StudentInformationSystem.TeacherSystem.TeacherSystem;
 import StudentInformationSystem.UI.MenuChoose;
 import StudentInformationSystem.UI.UI;
 
+import javax.swing.text.StyleContext;
+
 public class Test
 {
 	public static void main(String[] args)
 	{
-		Test test = new Test();
-
-		test.run();
+		new Test().run();
 	}
 
 	private static void runTest()

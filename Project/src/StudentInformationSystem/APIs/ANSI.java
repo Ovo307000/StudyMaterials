@@ -21,6 +21,49 @@ public class ANSI
 		}
 	}
 
+	public static class Print
+	{
+		private Print() {}
+
+		public static void printGradientBar(int length, int... nodes)
+		{
+			for (int i = 0; i < length; i++)
+			{
+				double ratio      = (double) i / (length - 1);
+				int    colorIndex = getInterpolatedColorIndex(ratio, nodes.length - 1);
+
+				String color = ANSI.ConsoleForegroundColor.randomColor();
+				System.out.print(color + "█");
+
+				// You can add a delay here if you want to slow down the animation
+				// try {
+				//     Thread.sleep(100);
+				// } catch (InterruptedException e) {
+				//     e.printStackTrace();
+				// }
+			}
+			System.out.println(); // Move to the next line after printing the bar
+		}
+
+		// Linear interpolation to get the color index between nodes
+		private static int getInterpolatedColorIndex(double ratio, int nodeCount)
+		{
+			double index      = ratio * nodeCount;
+			int    lowerIndex = (int) Math.floor(index);
+			int    upperIndex = (int) Math.ceil(index);
+
+			if (upperIndex >= nodeCount)
+			{
+				return nodeCount - 1;
+			}
+
+			double lowerWeight = upperIndex - index;
+			double upperWeight = 1 - lowerWeight;
+
+			return ((int) (lowerWeight * lowerIndex + upperWeight * upperIndex));
+		}
+	}
+
 	public static class Reset
 	{
 		public static final String RESET = "\u001B[0m";
