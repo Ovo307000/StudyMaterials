@@ -1,10 +1,10 @@
-package ShopMangement;
+package ShopMangement.API;
 
 import java.util.Scanner;
 
-public class MyScanner
+public class IScanner
 {
-	private MyScanner() {}
+	private IScanner() {}
 
 	public static Scanner getScanner()
 	{
