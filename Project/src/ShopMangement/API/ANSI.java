@@ -1,4 +1,4 @@
-package ShopMangement;
+package ShopMangement.API;
 
 public class ANSI
 {
@@ -10,6 +10,7 @@ public class ANSI
 		return "\u001B[0m";
 	}
 
+	// 颜色深度检查
 	private static void valuecheck(int... value)
 	{
 		for (int i : value)
@@ -20,50 +21,7 @@ public class ANSI
 			}
 		}
 	}
-
-	public static class Print
-	{
-		private Print() {}
-
-		public static void printGradientBar(int length, int... nodes)
-		{
-			for (int i = 0; i < length; i++)
-			{
-				double ratio      = (double) i / (length - 1);
-				int    colorIndex = getInterpolatedColorIndex(ratio, nodes.length - 1);
-
-				String color = ConsoleForegroundColor.randomColor();
-				System.out.print(color + "█");
-
-				// You can add a delay here if you want to slow down the animation
-				// try {
-				//     Thread.sleep(100);
-				// } catch (InterruptedException e) {
-				//     e.printStackTrace();
-				// }
-			}
-			System.out.println(); // Move to the next line after printing the bar
-		}
-
-		// Linear interpolation to get the color index between nodes
-		private static int getInterpolatedColorIndex(double ratio, int nodeCount)
-		{
-			double index      = ratio * nodeCount;
-			int    lowerIndex = (int) Math.floor(index);
-			int    upperIndex = (int) Math.ceil(index);
-
-			if (upperIndex >= nodeCount)
-			{
-				return nodeCount - 1;
-			}
-
-			double lowerWeight = upperIndex - index;
-			double upperWeight = 1 - lowerWeight;
-
-			return ((int) (lowerWeight * lowerIndex + upperWeight * upperIndex));
-		}
-	}
-
+	
 	public static class Reset
 	{
 		public static final String RESET = "\u001B[0m";
@@ -168,13 +126,33 @@ public class ANSI
 
 	public static class ConsoleFontStyle
 	{
+		// 粗体
 		public static final String BOLD          = "\u001B[1m";
+		// 斜体
 		public static final String ITALIC        = "\u001B[3m";
+		// 下划线
 		public static final String UNDERLINE     = "\u001B[4m";
+		// 闪烁
+		public static final String BLINK         = "\u001B[5m";
+		// 快速闪烁
+		public static final String FAST_BLINK    = "\u001B[6m";
+		// 反显
+		public static final String REVERSE_VIDEO = "\u001B[7m";
+		// 隐藏
+		public static final String HIDE          = "\u001B[8m";
+		// 删除线
 		public static final String STRIKETHROUGH = "\u001B[9m";
-		public static final String INVERTED      = "\u001B[7m";
-		public static final String HIDDEN        = "\u001B[8m";
 
 		private ConsoleFontStyle() {}
+	}
+
+	public static class Console
+	{
+		// 清屏
+		public static final String CLEAR_SCREEN = "\u001B[2J";
+		// 光标复位
+		public static final String RESET_CURSOR = "\u001B[H";
+
+		private Console() {}
 	}
 }
