@@ -1,5 +1,8 @@
 package ShopMangement.Menu;
 
+import ShopMangement.API.ISecureRandom;
+import ShopMangement.Logo.GPLV3;
+
 public class UI
 {
 	private UI() {}
@@ -10,358 +13,265 @@ public class UI
 
 		public static String licenceInformation()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Licence                             ||\n");
-			sb.append("===============================================================\n");
-			sb.append("|| 1. This program is free software: you can redistribute it  ||\n");
-			sb.append("||    and/or modify it under the terms of the GNU General    ||\n");
-			sb.append("||    Public License as published by the Free Software       ||\n");
-			sb.append("||    Foundation, either version 3 of the License, or        ||\n");
-			sb.append("||    (at your option) any later version.                    ||\n");
-			sb.append("|| 2. This program is distributed in the hope that it will   ||\n");
-			sb.append("||    be useful, but WITHOUT ANY WARRANTY; without even the  ||\n");
-			sb.append("||    implied warranty of MERCHANTABILITY or FITNESS FOR A   ||\n");
-			sb.append("||    PARTICULAR PURPOSE.  See the GNU General Public        ||\n");
-			sb.append("||    License for more details.                              ||\n");
-			sb.append("|| 3. You should have received a copy of the GNU General     ||\n");
-			sb.append("||    Public License along with this program.  If not, see   ||\n");
-			sb.append("||    <http://www.gnu.org/licenses/>.                        ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
+			return """
+			        =================================================================
+			        ||                         Licence                             ||
+			        =================================================================
+			        ||                                                             ||
+			        || This program is free software: you can redistribute it      ||
+			        || and/or modify it under the terms of the GNU General Public  ||
+			        || License as published by the Free Software Foundation,       ||
+			        || either version 3 of the License, or (at your option) any    ||
+			        || later version.                                              ||
+			        ||                                                             ||
+			        || This program is distributed in the hope that it will be     ||
+			        || useful, but WITHOUT ANY WARRANTY; without even the implied  ||
+			        || warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR     ||
+			        || PURPOSE.  See the GNU General Public License for more       ||
+			        || details.                                                    ||
+			        ||                                                             ||
+			        || You should have received a copy of the GNU General Public   ||
+			        || License along with this program.  If not, see               ||
+			        || <https://www.gnu.org/licenses/>.                            ||
+			        ||                                                             ||
+			        =================================================================
+			       """;
 		}
 
 		public static String GPLV3Logo()
 		{
-			return "\n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n" +
-			       "        GGGGGGGGGGGGGPPPPPPPPPPPPPPPPP   LLLLLLLLLLL                  VVVVVVVV           VVVVVVVV 333333333333333   \n" +
-			       "     GGG::::::::::::GP::::::::::::::::P  L:::::::::L                  V::::::V           V::::::V3:::::::::::::::33 \n" +
-			       "   GG:::::::::::::::GP::::::PPPPPP:::::P L:::::::::L                  V::::::V           V::::::V3::::::33333::::::3\n" +
-			       "  G:::::GGGGGGGG::::GPP:::::P     P:::::PLL:::::::LL                  V::::::V           V::::::V3333333     3:::::3\n" +
-			       " G:::::G       GGGGGG  P::::P     P:::::P  L:::::L                     V:::::V           V:::::V             3:::::3\n" +
-			       "G:::::G                P::::P     P:::::P  L:::::L                      V:::::V         V:::::V              3:::::3\n" +
-			       "G:::::G                P::::PPPPPP:::::P   L:::::L                       V:::::V       V:::::V       33333333:::::3 \n" +
-			       "G:::::G    GGGGGGGGGG  P:::::::::::::PP    L:::::L                        V:::::V     V:::::V        3:::::::::::3  \n" +
-			       "G:::::G    G::::::::G  P::::PPPPPPPPP      L:::::L                         V:::::V   V:::::V         33333333:::::3 \n" +
-			       "G:::::G    GGGGG::::G  P::::P              L:::::L                          V:::::V V:::::V                  3:::::3\n" +
-			       "G:::::G        G::::G  P::::P              L:::::L                           V:::::V:::::V                   3:::::3\n" +
-			       " G:::::G       G::::G  P::::P              L:::::L         LLLLLL             V:::::::::V                    3:::::3\n" +
-			       "  G:::::GGGGGGGG::::GPP::::::PP          LL:::::::LLLLLLLLL:::::L              V:::::::V         3333333     3:::::3\n" +
-			       "   GG:::::::::::::::GP::::::::P          L::::::::::::::::::::::L               V:::::V          3::::::33333::::::3\n" +
-			       "     GGG::::::GGG:::GP::::::::P          L::::::::::::::::::::::L                V:::V           3:::::::::::::::33 \n" +
-			       "        GGGGGG   GGGGPPPPPPPPPP          LLLLLLLLLLLLLLLLLLLLLLLL                 VVV             333333333333333   \n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n" +
-			       "                                                                                                                    \n";
+			return GPLV3.values()[ISecureRandom.secureRandom()
+			                                   .nextInt(GPLV3.values().length)].getASCIIArt();
 		}
 
 		public static String loginMain()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("+---------------------------LOGIN-----------------------------+\n");
-			sb.append("| 1. User login                                               |\n");
-			sb.append("| 2. Admin login                                              |\n");
-			sb.append("| 3. Exit                                                     |\n");
-			sb.append("+-------------------------------------------------------------+\n");
-
-			return sb.toString();
+			return """
+			       		+---------------------------MAIN------------------------------+
+			       		| 1. User login                                               |
+			       		| 2. Admin login                                              |
+			       		| 3. Exit                                                     |
+			       		+-------------------------------------------------------------+
+			       """;
 		}
 
 		public static String userLogin()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("+------------------------USER LOGIN---------------------------+\n");
-			sb.append("| 1. Login                                                    |\n");
-			sb.append("| 2. Register                                                 |\n");
-			sb.append("| 3. Back                                                     |\n");
-			sb.append("| 4. Exit                                                     |\n");
-			sb.append("+-------------------------------------------------------------+\n");
-
-			return sb.toString();
+			return """
+			       		+------------------------USER LOGIN---------------------------+
+			       		| 1. Login                                                    |
+			       		| 2. Register                                                 |
+			       		| 3. Back                                                     |
+			       		| 4. Exit                                                     |
+			       		+-------------------------------------------------------------+
+			       """;
 		}
 
 		public static String adminLogin()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("+------------------------ADMIN LOGIN--------------------------+\n");
-			sb.append("| 1. Login                                                    |\n");
-			sb.append("| 2. Register                                                 |\n");
-			sb.append("| 3. Back                                                     |\n");
-			sb.append("| 3. Exit                                                     |\n");
-			sb.append("+-------------------------------------------------------------+\n");
-
-			return sb.toString();
+			return """
+			       		+------------------------ADMIN LOGIN--------------------------+
+			       		| 1. Login                                                    |
+			       		| 2. Register                                                 |
+			       		| 3. Back                                                     |
+			       		| 4. Exit                                                     |
+			       		+-------------------------------------------------------------+
+			       """;
 		}
 
 		public static String adminMenu()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("+---------------------------ADMIN-----------------------------+\n");
-			sb.append("| 1. Add commodity                                            |\n");
-			sb.append("| 2. Remove commodity                                         |\n");
-			sb.append("| 3. Edit commodity                                           |\n");
-			sb.append("| 4. Show commodity                                           |\n");
-			sb.append("| 5. Show all commodity                                       |\n");
-			sb.append("| 6. Show all users                                           |\n");
-			sb.append("| 7. Show all admins                                          |\n");
-			sb.append("| 8. Edit user                                                |\n");
-			sb.append("| 9. Remove user                                              |\n");
-			sb.append("|10. Salary increase                                          |\n");
-			sb.append("|11. Job change                                               |\n");
-			sb.append("|12. Back                                                     |\n");
-			sb.append("|13. Exit                                                     |\n");
-			sb.append("+-------------------------------------------------------------+\n");
-
-			return sb.toString();
+			return """
+			          +---------------------------ADMIN-----------------------------+	
+			          | 1. Add commodity                                            |
+			          | 2. Remove commodity                                         |
+			          | 3. Edit commodity                                           |
+			          | 4. Show commodity                                           |
+			          | 5. Show all commodity                                       |
+			          | 6. Show all users                                           |
+			          | 7. Show all admins                                          |
+			          | 8. Edit user                                                |
+			          | 9. Remove user                                              |
+			          |10. Salary increase                                          |
+			          |11. Job change                                               |
+			          |12. Back                                                     |
+			          |13. Exit                                                     |
+			          +-------------------------------------------------------------+
+			       """;
 		}
 
 		public static String mainMenu()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("+---------------------------MAIN------------------------------+\n");
-			sb.append("| 1. Add commodity                                            |\n");
-			sb.append("| 2. Remove commodity                                         |\n");
-			sb.append("| 3. Edit commodity                                           |\n");
-			sb.append("| 4. Show commodity                                           |\n");
-			sb.append("+-------------------------------------------------------------+\n");
-
-			return sb.toString();
+			return """
+			          +---------------------------MAIN------------------------------+
+			          | 1. User login                                               |
+			          | 2. Admin login                                              |
+			          | 3. Exit                                                     |
+			          +-------------------------------------------------------------+
+			       """;
 		}
 
-	}
-
-	public static class Error
-	{
-		private Error() {}
-
-		public static String invalidInput()
+		public static class Error
 		{
-			StringBuilder sb = new StringBuilder();
+			private Error() {}
 
-			sb.append("!!!!!!!!Invalid input!!!!!!!!\n");
+			public static String invalidInput()
+			{
+				return "!!!!!!!!Invalid input!!!!!!!!\n";
+			}
 
-			return sb.toString();
+			public static <T> String invalidInput(T t)
+			{
+				return STR."!!!!!!!!Invalid input: \{t}!!!!!!!!\n";
+			}
+
+			public static String nonFound()
+			{
+				return "!!!!!!!!Non found!!!!!!!!\n";
+			}
+
+			public static <T> String nonFound(T t)
+			{
+				return STR."!!!!!!!!Non found: \{t}!!!!!!!!\n";
+			}
+
+			public static String nonFoundChoice()
+			{
+				return "!!!!!!!!Non found choice!!!!!!!!\n";
+			}
+
+			public static String nonFoundChoice(String choice)
+			{
+				return STR."!!!!!!!!Non found choice: \{choice}!!!!!!!!\n";
+			}
 		}
 
-		public static <T> String invalidInput(T t)
+		public static class Massage
 		{
-			StringBuilder sb = new StringBuilder();
 
-			sb.append(STR."!!!!!!!!Invalid input: \{t}!!!!!!!!\n");
+			public static String welcome()
+			{
+				return """
+				       	===============================================================
+				       	||                          Welcome!                         ||
+				       	===============================================================
+				       """;
+			}
 
-			return sb.toString();
-		}
+			public static String exit()
+			{
+				return """
+				       	===============================================================
+				       	||                          Goodbye!                         ||
+				       	===============================================================
+				       """;
+			}
 
-		public static String nonFound()
-		{
-			StringBuilder sb = new StringBuilder();
+			public static String loginSuccess()
+			{
+				return """
+				       	===============================================================
+				       	||                       Login success!                      ||
+				       	===============================================================
+				       """;
+			}
 
-			sb.append("!!!!!!!!Non found!!!!!!!!\n");
+			public static String loginFail()
+			{
+				return """
+				       	===============================================================
+				       	||                       Login fail!                         ||
+				       	===============================================================
+				       """;
+			}
 
-			return sb.toString();
-		}
 
-		public static <T> String nonFound(T t)
-		{
-			StringBuilder sb = new StringBuilder();
+			public static String registerSuccess()
+			{
+				return """
+				       ===============================================================
+				       ||                       Register success!                   ||
+				       ===============================================================
+				       """;
+			}
 
-			sb.append(STR."!!!!!!!!Non found: \{t}!!!!!!!!\n");
+			public static String registerFail()
+			{
+				return """
+				       ===============================================================
+				       ||                       Register fail!                      ||
+				       ===============================================================
+				       """;
+			}
 
-			return sb.toString();
-		}
+			public static String addSuccess()
+			{
+				return """
+				       ===============================================================
+				       ||                       Add success!                        ||
+				       ===============================================================
+				       """;
+			}
 
-		public static String nonFoundChoice()
-		{
-			StringBuilder sb = new StringBuilder();
+			public static String addFail()
+			{
+				return """
+				       ===============================================================
+				       ||                       Add fail!                           ||
+				       ===============================================================
+				       """;
+			}
 
-			sb.append("!!!!!!!!Non found choice!!!!!!!!\n");
+			public static String removeSuccess()
+			{
+				return """
+				       ===============================================================
+				       ||                       Remove success!                     ||
+				       ===============================================================
+				       """;
+			}
 
-			return sb.toString();
-		}
+			public static String removeFail()
+			{
+				return """
+				       ===============================================================
+				       ||                       Remove fail!                        ||
+				       ===============================================================
+				       """;
+			}
 
-		public static String nonFoundChoice(String choice)
-		{
-			StringBuilder sb = new StringBuilder();
+			public static String editSuccess()
+			{
+				return """
+				       ===============================================================
+				       ||                       Edit success!                       ||
+				       ===============================================================
+				       """;
+			}
 
-			sb.append(STR."!!!!!!!!Non found choice: \{choice}!!!!!!!!\n");
+			public static String editFail()
+			{
+				return """
+				       ===============================================================
+				       ||                       Edit fail!                          ||
+				       ===============================================================
+				       """;
+			}
 
-			return sb.toString();
-		}
-	}
+			public static String inputPrompt()
+			{
+				return "Please input: ";
+			}
 
-	public static class Massage
-	{
+			public static String choicePrompt()
+			{
+				return "Please input your choice: ";
+			}
 
-		public static String welcome()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||               Welcome to Shop Management                  ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String exit()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Goodbye!                            ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String loginSuccess()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Login success!                      ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String loginFail()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Login fail!                         ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String registerSuccess()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Register success!                   ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String registerFail()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Register fail!                      ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String addSuccess()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Add success!                        ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String addFail()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Add fail!                           ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String removeSuccess()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Remove success!                     ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String removeFail()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Remove fail!                        ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String editSuccess()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Edit success!                       ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String editFail()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("===============================================================\n");
-			sb.append("||                       Edit fail!                          ||\n");
-			sb.append("===============================================================\n");
-
-			return sb.toString();
-		}
-
-		public static String inputPrompt()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("Please input: ");
-
-			return sb.toString();
-		}
-
-		public static String choicePrompt()
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("Please input your choice: ");
-
-			return sb.toString();
-		}
-
-		public static <T> String confirmPrompt(T t)
-		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.append(STR."Please confirm \{t} (y/n): ");
-
-			return sb.toString();
+			public static <T> String confirmPrompt(T t)
+			{
+				return STR."Please confirm \{t}: ";
+			}
 		}
 	}
 }

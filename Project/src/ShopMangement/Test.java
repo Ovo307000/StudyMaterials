@@ -1,6 +1,7 @@
 package ShopMangement;
 
 import ShopMangement.API.ANSI;
+import ShopMangement.Logo.Author;
 import ShopMangement.Logo.GPLV3;
 
 import java.util.ArrayList;
@@ -10,13 +11,20 @@ public class Test
 {
 	public static void main(String[] args)
 	{
-		GPLV3[] gplV3s = GPLV3.values();
-		ArrayList<String> logos = new ArrayList<String>();
+		GPLV3[]           gplV3s = GPLV3.values();
+		Author[]          athors = Author.values();
+		ArrayList<String> logos  = new ArrayList<String>();
 
 		for (GPLV3 gpl : gplV3s)
 		{
 			logos.add(gpl.getASCIIArt());
 		}
+
+		for (Author athor : athors)
+		{
+			logos.add(athor.getASCIIArt());
+		}
+
 
 		for (String logo : logos)
 		{
@@ -30,5 +38,6 @@ public class Test
 		}
 
 		System.out.print(ANSI.Reset.RESET);
+
 	}
 }
