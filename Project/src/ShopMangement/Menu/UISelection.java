@@ -49,7 +49,7 @@ public class UISelection
 				// 无效输入
 				default ->
 				{
-					System.err.println(UI.Error.invalidInput(choice));
+					System.err.println(UI.Massage.Error.invalidInput(choice));
 				}
 			}
 		}
