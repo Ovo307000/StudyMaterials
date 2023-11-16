@@ -1,0 +1,180 @@
+package ShopMangement;
+
+public class ANSI
+{
+	private ANSI() {}
+
+	// 这是迫不得已加的，与RESET类一样的功能，优点是调用方便，缺点是不够直观，且和其他的调用格式不一样。
+	public static String reset()
+	{
+		return "\u001B[0m";
+	}
+
+	private static void valuecheck(int... value)
+	{
+		for (int i : value)
+		{
+			if (i < 0 || i > 255)
+			{
+				throw new IllegalArgumentException("The value must be between 0 and 255.");
+			}
+		}
+	}
+
+	public static class Print
+	{
+		private Print() {}
+
+		public static void printGradientBar(int length, int... nodes)
+		{
+			for (int i = 0; i < length; i++)
+			{
+				double ratio      = (double) i / (length - 1);
+				int    colorIndex = getInterpolatedColorIndex(ratio, nodes.length - 1);
+
+				String color = ConsoleForegroundColor.randomColor();
+				System.out.print(color + "█");
+
+				// You can add a delay here if you want to slow down the animation
+				// try {
+				//     Thread.sleep(100);
+				// } catch (InterruptedException e) {
+				//     e.printStackTrace();
+				// }
+			}
+			System.out.println(); // Move to the next line after printing the bar
+		}
+
+		// Linear interpolation to get the color index between nodes
+		private static int getInterpolatedColorIndex(double ratio, int nodeCount)
+		{
+			double index      = ratio * nodeCount;
+			int    lowerIndex = (int) Math.floor(index);
+			int    upperIndex = (int) Math.ceil(index);
+
+			if (upperIndex >= nodeCount)
+			{
+				return nodeCount - 1;
+			}
+
+			double lowerWeight = upperIndex - index;
+			double upperWeight = 1 - lowerWeight;
+
+			return ((int) (lowerWeight * lowerIndex + upperWeight * upperIndex));
+		}
+	}
+
+	public static class Reset
+	{
+		public static final String RESET = "\u001B[0m";
+
+		private Reset() {}
+	}
+
+	public static class ConsoleForegroundColor
+	{
+		public static final String BLACK  = "\u001B[30m";
+		public static final String RED    = "\u001B[31m";
+		public static final String GREEN  = "\u001B[32m";
+		public static final String YELLOW = "\u001B[33m";
+		public static final String BLUE   = "\u001B[34m";
+		public static final String PURPLE = "\u001B[35m";
+		public static final String CYAN   = "\u001B[36m";
+		public static final String WHITE  = "\u001B[37m";
+
+		private ConsoleForegroundColor() {}
+
+		public static String randomColor()
+		{
+			int red = ISecureRandom.secureRandom()
+			                       .nextInt(256);
+			int green = ISecureRandom.secureRandom()
+			                         .nextInt(256);
+			int blue = ISecureRandom.secureRandom()
+			                        .nextInt(256);
+
+			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
+		}
+
+		public static String randomColor(int min, int max)
+		{
+			valuecheck(min);
+			valuecheck(max);
+
+			int red = ISecureRandom.secureRandom()
+			                       .nextInt(min, (max + 1));
+			int blue = ISecureRandom.secureRandom()
+			                        .nextInt(min, (max + 1));
+			int green = ISecureRandom.secureRandom()
+			                         .nextInt(min, (max + 1));
+
+			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
+		}
+
+		public static String otherColor(int red, int green, int blue)
+		{
+			valuecheck(red, green, blue);
+
+			return "\u001B[38;2;" + red + ";" + green + ";" + blue + "m";
+		}
+	}
+
+	public static class ConsoleBackgroundColor
+	{
+		public static final String BLACK  = "\u001B[40m";
+		public static final String RED    = "\u001B[41m";
+		public static final String GREEN  = "\u001B[42m";
+		public static final String YELLOW = "\u001B[43m";
+		public static final String BLUE   = "\u001B[44m";
+		public static final String PURPLE = "\u001B[45m";
+		public static final String CYAN   = "\u001B[46m";
+		public static final String WHITE  = "\u001B[47m";
+
+		private ConsoleBackgroundColor() {}
+
+		public static String randomColor()
+		{
+			int red = ISecureRandom.secureRandom()
+			                       .nextInt(256);
+			int blue = ISecureRandom.secureRandom()
+			                        .nextInt(256);
+			int green = ISecureRandom.secureRandom()
+			                         .nextInt(256);
+
+			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
+		}
+
+		public static String randomColor(int min, int max)
+		{
+			valuecheck(min, max);
+
+			int red = ISecureRandom.secureRandom()
+			                       .nextInt(min, (max + 1));
+			int blue = ISecureRandom.secureRandom()
+			                        .nextInt(min, (max + 1));
+			int green = ISecureRandom.secureRandom()
+			                         .nextInt(min, (max + 1));
+
+			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
+		}
+
+		public static String otherColor(int red, int green, int blue)
+		{
+			valuecheck(red, green, blue);
+
+			return "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
+		}
+	}
+
+	public static class ConsoleFontStyle
+	{
+		public static final String BOLD          = "\u001B[1m";
+		public static final String ITALIC        = "\u001B[3m";
+		public static final String UNDERLINE     = "\u001B[4m";
+		public static final String STRIKETHROUGH = "\u001B[9m";
+		public static final String INVERTED      = "\u001B[7m";
+		public static final String HIDDEN        = "\u001B[8m";
+
+		private ConsoleFontStyle() {}
+	}
+}

@@ -30,6 +30,6 @@ public abstract class Person
 	@Override
 	public String toString()
 	{
-		return STR."person{name='\{name}\{'\''}, age=\{age}\{'}'}";
+		return "Name: " + name + "\nAge: " + age + "\n";
 	}
 }
