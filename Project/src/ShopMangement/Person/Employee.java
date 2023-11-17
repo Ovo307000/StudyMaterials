@@ -152,24 +152,24 @@ public class Employee
 	{
 		this.dateOfJoining = dateOfJoining;
 	}
+
 	@Override
 	public String toString()
 	{
-		StringBuilder sb = new StringBuilder();
 
-		sb.append("Employee information: " + "\n");
-		sb.append("ID: " + id + "\n");
-		sb.append("Name: " + name + "\n");
-		sb.append("Age: " + age + "\n");
-		sb.append("Address: " + address + "\n");
-		sb.append("Phone: " + phone + "\n");
-		sb.append("Email: " + email + "\n");
-		sb.append("Password: " + password + "\n");
-		sb.append("Salary: " + salary + "\n");
-		sb.append("Date of Joining: " + dateOfJoining + "\n");
-		sb.append("Position: " + position + "\n");
-		sb.append("Account: " + account + "\n");
+		String sb = "Employee information: " + "\n" +
+		            "ID: " + id + "\n" +
+		            "Name: " + name + "\n" +
+		            "Age: " + age + "\n" +
+		            "Address: " + address + "\n" +
+		            "Phone: " + phone + "\n" +
+		            "Email: " + email + "\n" +
+		            "Password: " + password + "\n" +
+		            "Salary: " + salary + "\n" +
+		            "Date of Joining: " + dateOfJoining + "\n" +
+		            "Position: " + position + "\n" +
+		            "Account: " + account + "\n";
 
-		return sb.toString();
+		return sb;
 	}
 }

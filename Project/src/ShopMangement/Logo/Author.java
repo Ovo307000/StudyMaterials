@@ -24,10 +24,10 @@ public enum Author
 
 	;
 
-	private String ASCIIArt;
-	private String name;
+	private final String ASCIIArt;
+	private final String name;
 
-	private Author(String ASCIIArt, String name)
+	Author(String ASCIIArt, String name)
 	{
 		this.ASCIIArt = ASCIIArt;
 		this.name     = name;

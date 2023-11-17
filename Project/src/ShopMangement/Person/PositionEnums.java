@@ -6,10 +6,10 @@ public enum PositionEnums
 	USER("员工", 1),
 	;
 
-	private String job;
-	private int sequence;
+	private final String job;
+	private final int    sequence;
 
-	private PositionEnums(String job, int sequence)
+	PositionEnums(String job, int sequence)
 	{
 		this.job      = job;
 		this.sequence = sequence;

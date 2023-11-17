@@ -306,6 +306,7 @@ public class UI
 			{
 				return "Please input: ";
 			}
+
 			public static String inputAccount()
 			{
 				return "Please input account: ";

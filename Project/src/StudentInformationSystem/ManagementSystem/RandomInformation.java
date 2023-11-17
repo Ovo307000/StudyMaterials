@@ -34,8 +34,8 @@ public class RandomInformation
 		long phoneNumberTail = MyRandom.secureRandom()
 		                               .nextLong(10000000, 99999999);
 
-		return String.valueOf(phoneNumberHead.get(MyRandom.secureRandom()
-		                                                  .nextInt(phoneNumberHead.size())) + phoneNumberTail);
+		return phoneNumberHead.get(MyRandom.secureRandom()
+		                                   .nextInt(phoneNumberHead.size())) + phoneNumberTail;
 	}
 
 	public static int getRandomAge()

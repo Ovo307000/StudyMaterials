@@ -17,10 +17,10 @@ public enum EmailEnums
 	;
 
 
-	private String suffix;
-	private int sequence;
+	private final String suffix;
+	private final int    sequence;
 
-	private EmailEnums(String suffix, int sequence)
+	EmailEnums(String suffix, int sequence)
 	{
 		this.suffix   = suffix;
 		this.sequence = sequence;

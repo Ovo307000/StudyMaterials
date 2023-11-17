@@ -80,8 +80,8 @@ public enum GPLV3
 					, "Georgia11"),
 
 	;
-	private String ASCIIArt;
-	private String name;
+	private final String ASCIIArt;
+	private final String name;
 
 	GPLV3(String ASCIIArt, String name)
 	{

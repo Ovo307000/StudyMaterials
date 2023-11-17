@@ -105,7 +105,7 @@ public class RandomInformationGenerator
 	public static PositionEnums getRandomPosition()
 	{
 		return PositionEnums.values()[ISecureRandom.secureRandom()
-		                                             .nextInt(PositionEnums.values().length)];
+		                                           .nextInt(PositionEnums.values().length)];
 	}
 
 	public static String getRandomAccount()
@@ -122,7 +122,7 @@ public class RandomInformationGenerator
 		{
 			int length = ISecureRandom.secureRandom()
 			                          .nextInt(6, 12);
-			char[] code = new char[62];
+			char[]        code         = new char[62];
 			StringBuilder randomString = new StringBuilder();
 
 			// 创建ANSI码表
@@ -145,7 +145,7 @@ public class RandomInformationGenerator
 			for (int i = 0; i < length; i++)
 			{
 				randomString.append(code[ISecureRandom.secureRandom()
-				                                  .nextInt(code.length)]);
+				                                      .nextInt(code.length)]);
 			}
 
 			return randomString.toString();
@@ -156,8 +156,8 @@ public class RandomInformationGenerator
 			LocalDate minDate = LocalDate.EPOCH;
 			LocalDate maxDate = LocalDate.now();
 
-			int days = (int) minDate.until(maxDate)
-			                       .getDays();
+			int days = minDate.until(maxDate)
+			                  .getDays();
 
 
 			LocalDate date = minDate.plusDays(ISecureRandom.secureRandom()

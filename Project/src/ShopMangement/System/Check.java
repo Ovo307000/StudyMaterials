@@ -10,7 +10,6 @@ public class Check
 	public static final int minPasswordLength = 6;
 
 
-
 	public static boolean isTooLong(String t)
 	{
 		return t.length() > maxUsernameLength;
@@ -40,7 +39,7 @@ public class Check
 		return false;
 	}
 
-public static boolean isPasswordCorrect(String account, String password)
+	public static boolean isPasswordCorrect(String account, String password)
 	{
 		for (Employee employee : EmployeeData.employees)
 		{
