@@ -3,7 +3,7 @@ package ShopMangement.Person;
 public enum PositionEnums
 {
 	ADMIN("管理员", 0),
-	USER("用户", 1),
+	USER("员工", 1),
 	;
 
 	private String job;

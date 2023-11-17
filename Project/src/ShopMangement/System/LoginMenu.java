@@ -4,7 +4,7 @@ import ShopMangement.API.ANSI;
 import ShopMangement.API.IScanner;
 import ShopMangement.Menu.UI;
 
-public class Login
+public class LoginMenu
 {
 	private static String password;
 
@@ -16,7 +16,7 @@ public class Login
 		while (! invalid)
 		{
 			System.out.print(ANSI.Console.FontStyle.BOLD + ANSI.Console.ForegroundColor.randomColor(200, 255));
-			System.out.println(UI.Massage.Prompt.username());
+			System.out.println(UI.Massage.Prompt.inputAccount());
 			System.out.print(ANSI.Reset.RESET);
 
 			account = IScanner.getScanner()
@@ -60,7 +60,7 @@ public class Login
 		while (! invalid)
 		{
 			System.out.print(ANSI.Console.FontStyle.BOLD + ANSI.Console.ForegroundColor.randomColor(200, 255));
-			System.out.println(UI.Massage.Prompt.password());
+			System.out.println(UI.Massage.Prompt.inputAccount());
 			System.out.print(ANSI.Reset.RESET);
 
 			password = IScanner.getScanner()
@@ -86,5 +86,13 @@ public class Login
 		}
 
 		return password;
+	}
+
+
+	public static void login()
+	{
+		getUserName();
+		getPassword();
+		Check.isPasswordCorrect(getUserName(), getPassword());
 	}
 }

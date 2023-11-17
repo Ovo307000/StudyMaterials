@@ -12,12 +12,11 @@ public class Employee
 	private        String        password;
 	private        String        salary;
 	private        String        dateOfJoining;
-	private        String        dateOfBirth;
 	private        PositionEnums position;
 	private        String        account;
 
 	public Employee(String name, int age, String address, String phone, String email, String password,
-	                String salary, String dateOfJoining, String dateOfBirth, PositionEnums position, String account)
+	                String salary, String dateOfJoining, PositionEnums position, String account)
 	{
 		this.id            = ++ nextId;
 		this.name          = name;
@@ -28,7 +27,6 @@ public class Employee
 		this.password      = password;
 		this.salary        = salary;
 		this.dateOfJoining = dateOfJoining;
-		this.dateOfBirth   = dateOfBirth;
 		this.position      = position;
 		this.account       = account;
 	}
@@ -154,14 +152,24 @@ public class Employee
 	{
 		this.dateOfJoining = dateOfJoining;
 	}
-
-	public String getDateOfBirth()
+	@Override
+	public String toString()
 	{
-		return dateOfBirth;
-	}
+		StringBuilder sb = new StringBuilder();
 
-	public void setDateOfBirth(String dateOfBirth)
-	{
-		this.dateOfBirth = dateOfBirth;
+		sb.append("Employee information: " + "\n");
+		sb.append("ID: " + id + "\n");
+		sb.append("Name: " + name + "\n");
+		sb.append("Age: " + age + "\n");
+		sb.append("Address: " + address + "\n");
+		sb.append("Phone: " + phone + "\n");
+		sb.append("Email: " + email + "\n");
+		sb.append("Password: " + password + "\n");
+		sb.append("Salary: " + salary + "\n");
+		sb.append("Date of Joining: " + dateOfJoining + "\n");
+		sb.append("Position: " + position + "\n");
+		sb.append("Account: " + account + "\n");
+
+		return sb.toString();
 	}
 }

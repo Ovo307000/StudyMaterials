@@ -2,11 +2,14 @@ package ShopMangement;
 
 import ShopMangement.API.ANSI;
 import ShopMangement.Menu.UI;
+import ShopMangement.Menu.UISelection;
+import ShopMangement.System.EmployeeData;
 
 public class Test
 {
 	public static void main(String[] args) throws InterruptedException
 	{
+		init();
 		run();
 	}
 
@@ -25,8 +28,13 @@ public class Test
 		System.out.print(ANSI.Console.FontStyle.BOLD + ANSI.Console.ForegroundColor.randomColor(200, 255));
 		System.out.println(UI.Menu.loginMain());
 		System.out.print(ANSI.Console.FontStyle.BOLD + ANSI.Console.ForegroundColor.randomColor(200, 255));
-		System.out.println(UI.Massage.Prompt.choice());
+		UISelection.loginMain();
 
 		System.out.print(ANSI.Reset.RESET);
+	}
+
+	public static void init()
+	{
+		EmployeeData.initRandomEmployees(100);
 	}
 }

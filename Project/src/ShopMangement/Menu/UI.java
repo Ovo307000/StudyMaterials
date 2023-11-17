@@ -306,6 +306,15 @@ public class UI
 			{
 				return "Please input: ";
 			}
+			public static String inputAccount()
+			{
+				return "Please input account: ";
+			}
+
+			public static String inputPassword()
+			{
+				return "Please input password: ";
+			}
 
 			public static String choice()
 			{
@@ -317,20 +326,6 @@ public class UI
 				return STR."Please confirm \{t}: ";
 			}
 
-			public static String username()
-			{
-				return "Please input your username: ";
-			}
-
-			public static String password()
-			{
-				return "Please input your password: ";
-			}
-
-			public static String passwordConfirm()
-			{
-				return "Please confirm your password: ";
-			}
 		}
 
 		public static class Error
