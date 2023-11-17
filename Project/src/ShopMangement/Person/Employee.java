@@ -14,9 +14,10 @@ public class Employee
 	private        String        dateOfJoining;
 	private        String        dateOfBirth;
 	private        PositionEnums position;
+	private        String        account;
 
 	public Employee(String name, int age, String address, String phone, String email, String password,
-	                String salary, String dateOfJoining, String dateOfBirth, PositionEnums position)
+	                String salary, String dateOfJoining, String dateOfBirth, PositionEnums position, String account)
 	{
 		this.id            = ++ nextId;
 		this.name          = name;
@@ -29,6 +30,7 @@ public class Employee
 		this.dateOfJoining = dateOfJoining;
 		this.dateOfBirth   = dateOfBirth;
 		this.position      = position;
+		this.account       = account;
 	}
 
 	public Employee() {}
@@ -41,6 +43,16 @@ public class Employee
 	public static void setNextId(int nextId)
 	{
 		Employee.nextId = nextId;
+	}
+
+	public String getAccount()
+	{
+		return account;
+	}
+
+	public void setAccount(String account)
+	{
+		this.account = account;
 	}
 
 	public PositionEnums getPosition()
