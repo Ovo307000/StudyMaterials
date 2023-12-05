@@ -2,9 +2,11 @@ package StudentInformationSystem.ManagementSystem;
 
 import StudentInformationSystem.APIs.MyRandom;
 import StudentInformationSystem.Enums.EmailEnums;
+import StudentInformationSystem.Enums.LevelEnums;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RandomInformation
 {
@@ -66,5 +68,20 @@ public class RandomInformation
 		return firstNames.get(MyRandom.secureRandom()
 		                              .nextInt(firstNames.size())) + lastNames.get(MyRandom.secureRandom()
 		                                                                                   .nextInt(lastNames.size()));
+	}
+
+	public static String getRandomLevel()
+	{
+		List<LevelEnums> levels = new ArrayList<LevelEnums>(Arrays.asList(LevelEnums.values()));
+
+		return levels.get(MyRandom.secureRandom()
+		                          .nextInt(levels.size()))
+		             .getAbbreviation();
+	}
+
+	public static int getRandomScore()
+	{
+		return MyRandom.secureRandom()
+		               .nextInt(0, 101);
 	}
 }

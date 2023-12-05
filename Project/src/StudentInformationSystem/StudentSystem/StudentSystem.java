@@ -19,11 +19,14 @@ public class StudentSystem
 	{
 		for (int i = 0; i < count; i++)
 		{
-			students.add(new Student(RandomInformation.getRandomName(), RandomInformation.getRandomAge(),
-			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomLevel(),
-			                         RandomInformation.getRandomEmail(), RandomInformation.getRandomAddress(),
+			students.add(new Student(RandomInformation.getRandomName(),
+			                         RandomInformation.getRandomAge(),
+			                         RandomInformation.getRandomAddress(),
 			                         RandomInformation.getRandomPhoneNumber(),
-			                         StudentInformationSystem.StudentSystem.RandomInformation.getRandomScore()));
+			                         RandomInformation.getRandomEmail(),
+			                         RandomInformation.getRandomLevel(),
+			                         RandomInformation.getRandomScore()
+			));
 		}
 	}
 
